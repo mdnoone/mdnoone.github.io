@@ -87,7 +87,7 @@ if (isItMobile == false){
 }
 
 
-var tonerUrl = "http://{S}tile.stamen.com/toner-background/{Z}/{X}/{Y}.png";
+var tonerUrl = "http://{S}tile.stamen.com/terrain-background/{Z}/{X}/{Y}.png";
 var labelUrl = "http://{S}tile.stamen.com/toner-labels/{Z}/{X}/{Y}.png";
 var url = tonerUrl.replace(/({[A-Z]})/g, function(s) {
     return s.toLowerCase();
