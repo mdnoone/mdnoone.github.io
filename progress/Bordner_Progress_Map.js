@@ -76,7 +76,7 @@ if (isItMobile == false){
           // should hovering wake the map? (clicking always will)
           hoverToWake: false,
           // opacity (between 0 and 1) of inactive map
-          sleepOpacity: .6
+          sleepOpacity: 0
       }).setView([46.785734,-89.837036], 6);
 	}else{
 		var map = L.map('map',{
