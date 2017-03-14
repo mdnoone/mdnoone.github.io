@@ -3,7 +3,7 @@ var geoC = (function() {
 	// declare variables
 	var geocoderControl = false;	// controls the double search error
 	var titleText = "Discount Program Geocoder";	// text for title
-	var subText = "Enter your address and search for what programs are available in your area.";	// optional text for sub title
+	var subText = "Enter your address and search for what programs are available.";	// optional text for sub title
 	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";	// text for error message
 	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";	// text for error message
 	var errorCount = 0;		// controls which error message is displayed
