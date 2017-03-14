@@ -316,7 +316,7 @@ var geoC = (function() {
 		// set timer to allow function to run again
 		window.setTimeout(function() {
 			geocoderControl = false;
-		}, 4000);
+		}, 1000);
 	};
 	
 	function catchUndefinedLayer(err) {
@@ -334,7 +334,7 @@ var geoC = (function() {
 		// set timer to allow function to run again
 		window.setTimeout(function() {
 			geocoderControl = false;
-		}, 4000);
+		}, 1000);
 	};
 	
 })();
