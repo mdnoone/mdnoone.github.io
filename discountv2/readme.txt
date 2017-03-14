@@ -13,7 +13,7 @@ You will also need to include the geojson file that is referencing the polygon l
 
 
 
-
+(note: lines may change if you code or copy and paste into new documents)
 To Change the Title Text:
 	line 5 in main.js, enter value for "var titleText"
 
