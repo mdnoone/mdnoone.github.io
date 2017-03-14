@@ -1,18 +1,18 @@
 
 var geoC = (function() {
 	// declare variables
-	var geocoderControl = false;
-	var titleText = "Enter Your Address";
-	var subText = "";
-	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";
-	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";
-	var errorCount = 0;
+	var geocoderControl = false;	// controls the double search error
+	var titleText = "Enter Your Address";	// text for title
+	var subText = "";	// optional text for sub title
+	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";	// text for error message
+	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";	// text for error message
+	var errorCount = 0;		// controls which error message is displayed
 	
-	// create and connect to map
+	// create and connect to map (using bordner lab mapbox account)
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYm9yZG5lcndsZWkiLCJhIjoiY2lyZjd1a2tyMDA3dmc2bmtkcjUzaG5meCJ9.eswxCZSAnob59HR0wEaTpA';
 	var map = new mapboxgl.Map({
 		container: 'map',
-		style: 'mapbox://styles/bordnerwlei/cizepw2le005h2so39v1oa0i1',
+		style: 'mapbox://styles/bordnerwlei/cizepw2le005h2so39v1oa0i1',	// uses special style - no data
 		center: [-89.4012, 43.0731],
 		zoom: 13,
 		pitch: 0.1
@@ -46,7 +46,7 @@ var geoC = (function() {
 	var myLine = document.createElement("hr");
 	$(myLine).appendTo("#myContainer");
 	
-	
+	// create and assign loader bar for geocoder
 	var myLoaderBox = document.createElement("div");
 	var myLoader = document.createElement("div");
 	myLoaderBox.setAttribute("id", "myProgress");
@@ -57,13 +57,14 @@ var geoC = (function() {
 	
 	// ensures map has loaded before continuing
 	map.on('load', function() {
-	
+		
+		// add source for programs polygon layer
 		map.addSource('programs', {
 			'type': 'geojson',
 			'data': 'programs.geojson'
 		});
 		
-		// add polygon layer
+		// add programs polygon layer
 		map.addLayer({
 			'id': 'program-poly',
 			'type': 'fill',
@@ -75,7 +76,7 @@ var geoC = (function() {
 			}
 		});
 		
-		// add point source
+		// add point source (for geocoder)
 		map.addSource('single-point', {
 			"type": "geojson",
 			"data": {
@@ -84,7 +85,7 @@ var geoC = (function() {
 			}
 		});
 		
-		// add point layer
+		// add point layer (for geocoder)
 		map.addLayer({
 			"id": "point",
 			"source": "single-point",
@@ -95,6 +96,7 @@ var geoC = (function() {
 			}
 		});
 		
+		// interval check to make sure that the program polygon layer is loaded before allowed to do anything else with geocoder
 		initLoad = setInterval(function(){
 			var checky = map.isSourceLoaded('programs');
 			if (checky == true) {
@@ -108,6 +110,7 @@ var geoC = (function() {
 
 		// Listen for the `geocoder.input` event
 		geocoder.on('result', function(ev) {
+			// on geocoder result, run moveBar function
 			moveBar(ev, ev.result.geometry.coordinates);
 		});
 	});
@@ -119,12 +122,14 @@ var geoC = (function() {
 		while (para[0]) {
 			para[0].parentNode.removeChild(para[0]);
 		}
-					
+		
+		// show loader
 		myLoaderBox.style.visibility = "visible";
 		var elem = document.getElementById("myBar");
 		var width = 0;
 		var id = setInterval(frame, 50);
 		function frame() {
+			// if the loader bar is at 100%, clear loader, run query, and call function to add data to DOM
 			if (width >= 100) {
 				clearInterval(id);
 				myLoaderBox.style.visibility = "hidden";
@@ -146,6 +151,7 @@ var geoC = (function() {
 				console.log(isInside);
 				
 				try {
+					// add data to DOM if successful
 					if (geocoderControl == false) {
 						addAndPopulateLinks(layer.properties.ATT, layer.properties.CenturyLin, 
 							layer.properties.Charter, layer.properties.Comcast, layer.properties.Frontier, 
@@ -154,15 +160,15 @@ var geoC = (function() {
 						geocoderControl = true;
 					}
 				} catch(err) {
+					// display error message to DOM if unsuccessful
 					if (geocoderControl == false) {
 						catchUndefinedLayer(err);
 						geocoderControl = true;
 					}
 					
 				}
-					
-					
 			} else {
+				// if not at 100%, add one to width
 				width = width + 1;
 				elem.style.width = width + '%';
 			}
@@ -227,7 +233,7 @@ var geoC = (function() {
 		link8.setAttribute("target", "_blank");
 		link9.setAttribute("target", "_blank");
 		
-		// check if properties has link
+		// check if properties has link: yes link = give href || no link = no href, class gonnaRemove
 		if (ATT != "No discount program") {
 			link1.setAttribute("href", ATT);
 			link1.innerHTML = "<b>ATT: </b>" + ATT;
@@ -328,6 +334,7 @@ var geoC = (function() {
 	};
 	
 	function catchUndefinedLayer(err) {
+		// determines which error message to display on unsuccessful query
 		errorCount = errorCount + 1;
 		var myErrorText = document.createElement("h3");
 		myErrorText.setAttribute("class", "gonnaRemove");
