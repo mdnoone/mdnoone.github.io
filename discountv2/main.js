@@ -54,7 +54,6 @@ var geoC = (function() {
 	$(myLoader).appendTo(myLoaderBox);
 	$(myLoaderBox).appendTo("#myContainer");
 	
-	
 	// ensures map has loaded before continuing
 	map.on('load', function() {
 		
@@ -116,7 +115,6 @@ var geoC = (function() {
 	});
 	
 	function moveBar(ev, point) {
-				
 		// retrieve and remove all classes with 'gonnaRemove'
 		var para = document.getElementsByClassName('gonnaRemove');
 		while (para[0]) {
@@ -139,17 +137,7 @@ var geoC = (function() {
 				var features = map.queryRenderedFeatures(point, { layers: ['program-poly'] });
 				var layer = features[0];
 				
-				var poly = turf.polygon([[
-  					[-81, 41],
-  					[-81, 47],
-  					[-72, 47],
-  					[-72, 41],
-  					[-81, 41]
-				]]);
-
-				var isInside = turf.inside(ev.result.geometry, poly);
-				console.log(isInside);
-				
+				// check if successful or unsuccessful
 				try {
 					// add data to DOM if successful
 					if (geocoderControl == false) {
@@ -165,10 +153,9 @@ var geoC = (function() {
 						catchUndefinedLayer(err);
 						geocoderControl = true;
 					}
-					
 				}
 			} else {
-				// if not at 100%, add one to width
+				// if not at 100%, add 1 to width (smaller value creates slower geocoder load)
 				width = width + 1;
 				elem.style.width = width + '%';
 			}
@@ -305,7 +292,6 @@ var geoC = (function() {
 			link9.innerHTML = "<b>Lifeline: </b>No discount program";
 			link9.setAttribute("class", "noLink gonnaRemove");
 		}
-		
 		
 		// append links and breaks to container
 		$(link1).appendTo("#myContainer");
