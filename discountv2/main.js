@@ -231,9 +231,9 @@ var geoC = (function() {
 		
 		if (CenturyLin != "No discount program") {
 			link2.setAttribute("href", CenturyLin);
-			link2.innerHTML = "<b>CenturyLin: </b>Discount Program Available"; //+ CenturyLink;
+			link2.innerHTML = "<b>CenturyLink: </b>Discount Program Available"; //+ CenturyLin;
 		} else {
-			link2.innerHTML = "<b>CenturyLin: </b>No discount program";
+			link2.innerHTML = "<b>CenturyLink: </b>No discount program";
 			link2.setAttribute("class", "noLink gonnaRemove");
 		}
 		
