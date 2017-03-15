@@ -240,9 +240,6 @@ var geoC = (function() {
 		if (Charter != "No discount program") {
 			link3.setAttribute("href", Charter);
 			link3.innerHTML = "<b>Charter: </b>Discount Program Available"; //+ Charter;
-		} else {
-			link3.innerHTML = "<b>Charter: </b>No discount program";
-			link3.setAttribute("class", "noLink gonnaRemove");
 		}
 		
 		if (Comcast != "No discount program") {
