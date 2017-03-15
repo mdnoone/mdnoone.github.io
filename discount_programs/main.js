@@ -232,11 +232,17 @@ var geoC = (function() {
 		if (CenturyLink != "No discount program") {
 			link2.setAttribute("href", CenturyLink);
 			link2.innerHTML = "<b>CenturyLink: </b>Discount Program Available"; //+ CenturyLink;
+		} else {
+			link4.innerHTML = "";
+			link4.setAttribute("class", "noLink gonnaRemove");
 		}
 		
 		if (Charter != "No discount program") {
 			link3.setAttribute("href", Charter);
 			link3.innerHTML = "<b>Charter: </b>Discount Program Available"; //+ Charter;
+		} else {
+			link4.innerHTML = "<b>Charter: </b>No discount program";
+			link4.setAttribute("class", "noLink gonnaRemove");
 		}
 		
 		if (Comcast != "No discount program") {
