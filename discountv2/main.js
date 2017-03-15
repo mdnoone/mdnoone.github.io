@@ -141,7 +141,7 @@ var geoC = (function() {
 				try {
 					// add data to DOM if successful
 					if (geocoderControl == false) {
-						addAndPopulateLinks(layer.properties.AT&T, layer.properties.CenturyLink, 
+						addAndPopulateLinks(layer.properties.ATT, layer.properties.CenturyLink, 
 							layer.properties.Charter, layer.properties.Comcast, layer.properties.Frontier, 
 							layer.properties.Mediacom, layer.properties.Midco, layer.properties.Sprint, 
 							layer.properties.Lifeline);
@@ -163,7 +163,7 @@ var geoC = (function() {
 	};
 	
 	// function to add and populate links
-	function addAndPopulateLinks(AT&T, CenturyLink, Charter, Comcast, Frontier, Mediacom, Midco, Sprint, Lifeline) {
+	function addAndPopulateLinks(ATT, CenturyLink, Charter, Comcast, Frontier, Mediacom, Midco, Sprint, Lifeline) {
 		errorCount = 0;
 		// create links
 		var link1 = document.createElement("a");
@@ -221,11 +221,11 @@ var geoC = (function() {
 		link9.setAttribute("target", "_blank");
 		
 		// check if properties has link: yes link = give href || no link = no href, class gonnaRemove
-		if (AT&T != "No discount program") {
-			link1.setAttribute("href", AT&T);
-			link1.innerHTML = "<b>AT&T: </b>Discount Program Available"; //+ AT&T;
+		if (ATT != "No discount program") {
+			link1.setAttribute("href", ATT);
+			link1.innerHTML = "<b>ATT: </b>Discount Program Available"; //+ ATT;
 		} else {
-			link1.innerHTML = "<b>AT&T: </b>No discount program";
+			link1.innerHTML = "<b>ATT: </b>No discount program";
 			link1.setAttribute("class", "noLink gonnaRemove");
 		}
 		
