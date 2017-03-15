@@ -141,7 +141,7 @@ var geoC = (function() {
 				try {
 					// add data to DOM if successful
 					if (geocoderControl == false) {
-						addAndPopulateLinks(layer.properties.ATT, layer.properties.CenturyLink, 
+						addAndPopulateLinks(layer.properties.ATT, layer.properties.CenturyLin, 
 							layer.properties.Charter, layer.properties.Comcast, layer.properties.Frontier, 
 							layer.properties.Mediacom, layer.properties.Midco, layer.properties.Sprint, 
 							layer.properties.Lifeline);
@@ -163,7 +163,7 @@ var geoC = (function() {
 	};
 	
 	// function to add and populate links
-	function addAndPopulateLinks(ATT, CenturyLink, Charter, Comcast, Frontier, Mediacom, Midco, Sprint, Lifeline) {
+	function addAndPopulateLinks(ATT, CenturyLin, Charter, Comcast, Frontier, Mediacom, Midco, Sprint, Lifeline) {
 		errorCount = 0;
 		// create links
 		var link1 = document.createElement("a");
@@ -229,11 +229,11 @@ var geoC = (function() {
 			link1.setAttribute("class", "noLink gonnaRemove");
 		}
 		
-		if (CenturyLink != "No discount program") {
-			link2.setAttribute("href", CenturyLink);
-			link2.innerHTML = "<b>CenturyLink: </b>Discount Program Available"; //+ CenturyLink;
+		if (CenturyLin != "No discount program") {
+			link2.setAttribute("href", CenturyLin);
+			link2.innerHTML = "<b>CenturyLin: </b>Discount Program Available"; //+ CenturyLink;
 		} else {
-			link2.innerHTML = "<b>CenturyLink: </b>No discount program";
+			link2.innerHTML = "<b>CenturyLin: </b>No discount program";
 			link2.setAttribute("class", "noLink gonnaRemove");
 		}
 		
