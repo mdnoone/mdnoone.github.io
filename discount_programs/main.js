@@ -233,7 +233,7 @@ var geoC = (function() {
 			link2.setAttribute("href", CenturyLink);
 			link2.innerHTML = "<b>CenturyLink: </b>Discount Program Available"; //+ CenturyLink;
 		} else {
-			link4.innerHTML = "";
+			link4.innerHTML = "<b>CenturyLink: </b>No discount program";
 			link4.setAttribute("class", "noLink gonnaRemove");
 		}
 		
