@@ -156,7 +156,7 @@ var geoC = (function() {
 				}
 			} else {
 				// if not at 100%, add 1 to width (smaller value creates slower geocoder load)
-				width = width + 100;
+				width = width + 0;
 				elem.style.width = width + '%';
 			}
 		};
