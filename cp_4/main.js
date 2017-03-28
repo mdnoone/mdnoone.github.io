@@ -8,11 +8,11 @@ var geoC = (function() {
 	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";	// text for error message
 	var errorCount = 0;		// controls which error message is displayed
 	
-	// create and connect to map (using bordner lab mapbox account)
-	mapboxgl.accessToken = 'pk.eyJ1IjoiYm9yZG5lcndsZWkiLCJhIjoiY2lyZjd1a2tyMDA3dmc2bmtkcjUzaG5meCJ9.eswxCZSAnob59HR0wEaTpA';
+	// create and connect to map (using mdnoone lab mapbox account)
+	mapboxgl.accessToken = 'pk.eyJ1IjoibWRub29uZSIsImEiOiJjaWp4ZHJoZ2kwdWx2dmJsenlsbTVxNDZzIn0.ANrRnewxI3PrUCMPOgMH-g';
 	var map = new mapboxgl.Map({
 		container: 'map',
-		style: 'mapbox://styles/bordnerwlei/cizepw2le005h2so39v1oa0i1',	// uses special style - no data
+		style: 'mapbox://styles/mdnoone/cj0mr6leg005v2smr8ci0lymu',	// uses special style - no data
 		center: [-89.4012, 43.0731],
 		zoom: 13,
 		pitch: 0.1
