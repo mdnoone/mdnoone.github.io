@@ -80,13 +80,13 @@ var geoC = (function() {
 			"type": "geojson",
 			"data": {
 				"type": "FeatureCollection",
-				"features": [
-					"bbox": [
-        				  -93.688669,
-					   42.362197,
-      				          -86.755047,
-       			                   47.014527
- 				         ],
+				"features": []
+					"bbox": [],
+        				//  -93.688669,
+					//  42.362197,
+      				        //  -86.755047,
+       			                //   47.014527
+ 				        ],
 			}
 		});
 		
