@@ -81,7 +81,6 @@ var geoC = (function() {
 			"data": {
 				"type": "FeatureCollection",
 				"features": []
-					"bbox": []
 			}
 		});
 		
