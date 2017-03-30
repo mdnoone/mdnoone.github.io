@@ -15,8 +15,7 @@ var geoC = (function() {
 		style: 'mapbox://styles/mdnoone/cj0mr6leg005v2smr8ci0lymu',// uses special style - no data
 		center: [-89.4012, 43.0731],
 		zoom: 13,
-		pitch: 0.1
-		bbox: [-93.688669, 42.362197, -86.755.47, 47.014527],
+		pitch: 0.1		
 	});
 			
 	// create and assign title
@@ -32,6 +31,7 @@ var geoC = (function() {
 	// create geocoder
 	var geocoder = new MapboxGeocoder({
 		accessToken: mapboxgl.accessToken
+		bbox: [-93.688669, 42.362197, -86.755.47, 47.014527]
 	});
 	
 	// add geocoder 
