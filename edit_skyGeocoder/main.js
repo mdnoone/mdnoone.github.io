@@ -241,7 +241,7 @@ var geoC = (function() {
 		
 		if (CenturyLin != "No discount program") {
 			link2.setAttribute("href", CenturyLin);
-			link2.innerHTML = "<b>CenturyLin: </b>" + CenturyLin;
+			link2.innerHTML = "<b>CenturyLin: /b>Discount Program Available";//  + CenturyLin;
 		} else {
 			link2.innerHTML = "<b>CenturyLin: </b>No discount program";
 			link2.setAttribute("class", "noLink gonnaRemove");
@@ -249,7 +249,7 @@ var geoC = (function() {
 		
 		if (Charter != "No discount program") {
 			link3.setAttribute("href", Charter);
-			link3.innerHTML = "<b>Charter: </b>" + Charter;
+			link3.innerHTML = "<b>Charter: /b>Discount Program Available";//  + Charter;
 		} else {
 			link3.innerHTML = "<b>Charter: </b>No discount program";
 			link3.setAttribute("class", "noLink gonnaRemove");
@@ -257,7 +257,7 @@ var geoC = (function() {
 		
 		if (Comcast != "No discount program") {
 			link4.setAttribute("href", Comcast);
-			link4.innerHTML = "<b>Comcast: </b>" + Comcast;
+			link4.innerHTML = "<b>Comcast: /b>Discount Program Available";//  + Comcast;
 		} else {
 			link4.innerHTML = "<b>Comcast: </b>No discount program";
 			link4.setAttribute("class", "noLink gonnaRemove");
@@ -265,7 +265,7 @@ var geoC = (function() {
 		
 		if (Frontier != "No discount program") {
 			link5.setAttribute("href", Frontier);
-			link5.innerHTML = "<b>Frontier: </b>" + Frontier;
+			link5.innerHTML = "<b>Frontier: /b>Discount Program Available";//  + Frontier;
 		} else {
 			link5.innerHTML = "<b>Frontier: </b>No discount program";
 			link5.setAttribute("class", "noLink gonnaRemove");
@@ -273,7 +273,7 @@ var geoC = (function() {
 		
 		if (Mediacom != "No discount program") {
 			link6.setAttribute("href", Mediacom);
-			link6.innerHTML = "<b>Mediacom: </b>" + Mediacom;
+			link6.innerHTML = "<b>Mediacom: /b>Discount Program Available";//  + Mediacom;
 		} else {
 			link6.innerHTML = "<b>Mediacom: </b>No discount program";
 			link6.setAttribute("class", "noLink gonnaRemove");
@@ -281,7 +281,7 @@ var geoC = (function() {
 		
 		if (Midco != "No discount program") {
 			link7.setAttribute("href", Midco);
-			link7.innerHTML = "<b>Midco: </b>" + Midco;
+			link7.innerHTML = "<b>Midco: /b>Discount Program Available";//  + Midco;
 		} else {
 			link7.innerHTML = "<b>Midco: </b>No discount program";
 			link7.setAttribute("class", "noLink gonnaRemove");
@@ -289,7 +289,7 @@ var geoC = (function() {
 		
 		if (Sprint != "No discount program") {
 			link8.setAttribute("href", Sprint);
-			link8.innerHTML = "<b>Sprint: </b>" + Sprint;
+			link8.innerHTML = "<b>Sprint: /b>Discount Program Available";//  + Sprint;
 		} else {
 			link8.innerHTML = "<b>Sprint: </b>No discount program";
 			link8.setAttribute("class", "noLink gonnaRemove");
@@ -297,7 +297,7 @@ var geoC = (function() {
 		
 		if (Lifeline != "No discount program") {
 			link9.setAttribute("href", Lifeline);
-			link9.innerHTML = "<b>Lifeline: </b>" + Lifeline;
+			link9.innerHTML = "<b>Lifeline: /b>Discount Program Available";//  + Lifeline;
 		} else {
 			link9.innerHTML = "<b>Lifeline: </b>No discount program";
 			link9.setAttribute("class", "noLink gonnaRemove");
