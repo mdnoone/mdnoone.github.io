@@ -3,6 +3,7 @@ var geoC = (function() {
 	// declare variables
 	var geocoderControl = false;
 	var titleText = "Enter your address to search for discount broadband program";
+	var subText = "Enter your address and search for what programs are available.";	// optional text for sub title
 	//var loaderText = "Loading...";
 	var subText = "";
 	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";
@@ -232,7 +233,7 @@ var geoC = (function() {
 		// check if properties has link
 		if (ATT != "No discount program") {
 			link1.setAttribute("href", ATT);
-			link1.innerHTML = "<b>ATT: </b>" + ATT;
+			link1.innerHTML = "<b>ATT: </b>Discount Program Available";// + ATT;
 		} else {
 			link1.innerHTML = "<b>ATT: </b>No discount program";
 			link1.setAttribute("class", "noLink gonnaRemove");
