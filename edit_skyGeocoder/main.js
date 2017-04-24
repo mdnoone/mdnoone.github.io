@@ -2,10 +2,10 @@
 var geoC = (function() {
 	// declare variables
 	var geocoderControl = false;
-	var titleText = "Enter your address to search for discount broadband program";
-	var subText = "Enter your address and search for what programs are available.";	// optional text for sub title
+	var titleText = "Wisconsin Discount Broadband Programs";
+	var subText = "Enter your address and search for what programs are available";	// optional text for sub title
 	//var loaderText = "Loading...";
-	var subText = "";
+	//var subText = "";
 	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";
 	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";
 	var errorCount = 0;
@@ -14,7 +14,7 @@ var geoC = (function() {
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYm9yZG5lcndsZWkiLCJhIjoiY2lyZjd1a2tyMDA3dmc2bmtkcjUzaG5meCJ9.eswxCZSAnob59HR0wEaTpA';
 	var map = new mapboxgl.Map({
 		container: 'map',
-		style: 'mapbox://styles/bordnerwlei/cizepw2le005h2so39v1oa0i1',
+		style: 'mapbox://styles/bordnerwlei/cizepw2le005h2so39v1oa0i1',	// uses special style - no data
 		center: [-89.4012, 43.0731],
 		zoom: 13,
 		pitch: 0.1
