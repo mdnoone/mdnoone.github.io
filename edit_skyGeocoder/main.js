@@ -14,7 +14,7 @@ var geoC = (function() {
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYm9yZG5lcndsZWkiLCJhIjoiY2lyZjd1a2tyMDA3dmc2bmtkcjUzaG5meCJ9.eswxCZSAnob59HR0wEaTpA';
 	var map = new mapboxgl.Map({
 		container: 'map',
-		style: 'mapbox://styles/bordnerwlei/cizepw2le005h2so39v1oa0i1',	// uses special style - no data
+		style: 'mapbox://styles/mdnoone/cj0mr6leg005v2smr8ci0lymu',	// uses special style - no data
 		center: [-89.4012, 43.0731],
 		zoom: 13,
 		pitch: 0.1
@@ -32,6 +32,10 @@ var geoC = (function() {
 	
 	// create geocoder
 	var geocoder = new MapboxGeocoder({
+		bbox: [
+				-93.688669, 42.362197,
+				-86.755047, 47.014527
+				],
 		accessToken: mapboxgl.accessToken
 	});
 	
