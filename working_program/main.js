@@ -3,7 +3,7 @@ var geoC = (function() {
 	// declare variables
 	var geocoderControl = false;
 	var titleText = "Wisconsin Discount Broadband Programs";
-	var subText = "Enter your address and search for what programs are available";	// optional text for sub title
+	var subText = "Enter your address to search for available programs.";	// optional text for sub title
 	//var loaderText = "Loading...";
 	//var subText = "";
 	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";
