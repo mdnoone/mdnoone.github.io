@@ -44,7 +44,7 @@ body {
 	right: 0;
 	margin: 0 auto;
 	text-align: center;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	z-index: 99;
 	opacity: .5;
 	margin-bottom: 50px;
