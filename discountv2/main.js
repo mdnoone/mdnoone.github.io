@@ -2,20 +2,12 @@
 var geoC = (function() {
 	// declare variables
 	var geocoderControl = false;	// controls the double search error
+	var logo = <img src="http://mdnoone.github.io/ramosmd/images/PSC_logo.png" alt="demo image"
 	var titleText = "Wisconsin Discount Broadband Programs";	// text for title
 	var subText = "Enter your address and search for what programs are available.";	// optional text for sub title
 	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";	// text for error message
 	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";	// text for error message
 	var errorCount = 0;		// controls which error message is displayed
-	var img = new Image();
-	var div = document.getElementById('foo');
-
-	img.onload = function() {
-	div.appendChild(img);
-	};
-
-	img.src = 'PSC_logo.psc';
-	
 	
 	// create and connect to map (using bordner lab mapbox account)
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYm9yZG5lcndsZWkiLCJhIjoiY2lyZjd1a2tyMDA3dmc2bmtkcjUzaG5meCJ9.eswxCZSAnob59HR0wEaTpA';
@@ -28,10 +20,15 @@ var geoC = (function() {
 	});
 			
 	// create and assign title
+	
+	var myTitle = document.createElement("h1");
+	myTitle.innerHTML = logo;
+	$(myTitle).appendTo("#myContainer");
+	
 	var myTitle = document.createElement("h1");
 	myTitle.innerHTML = titleText;
 	$(myTitle).appendTo("#myContainer");
-	
+		
 	// create and assign sub text
 	var mySubText = document.createElement("p");
 	mySubText.innerHTML = subText;
