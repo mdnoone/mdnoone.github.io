@@ -2,7 +2,6 @@
 var geoC = (function() {
 	// declare variables
 	var geocoderControl = false;	// controls the double search error
-	var logo = <img src="http://mdnoone.github.io/ramosmd/images/PSC_logo.png" alt="demo image"
 	var titleText = "Wisconsin Discount Broadband Programs";	// text for title
 	var subText = "Enter your address and search for what programs are available.";	// optional text for sub title
 	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";	// text for error message
@@ -20,10 +19,6 @@ var geoC = (function() {
 	});
 			
 	// create and assign title
-	
-	var myTitle = document.createElement("h1");
-	myTitle.innerHTML = logo;
-	$(myTitle).appendTo("#myContainer");
 	
 	var myTitle = document.createElement("h1");
 	myTitle.innerHTML = titleText;
