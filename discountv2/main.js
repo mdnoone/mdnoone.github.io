@@ -7,6 +7,15 @@ var geoC = (function() {
 	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";	// text for error message
 	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";	// text for error message
 	var errorCount = 0;		// controls which error message is displayed
+	var img = new Image();
+	var div = document.getElementById('foo');
+
+	img.onload = function() {
+	div.appendChild(img);
+	};
+
+	img.src = 'PSC_logo.psc';
+	
 	
 	// create and connect to map (using bordner lab mapbox account)
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYm9yZG5lcndsZWkiLCJhIjoiY2lyZjd1a2tyMDA3dmc2bmtkcjUzaG5meCJ9.eswxCZSAnob59HR0wEaTpA';
