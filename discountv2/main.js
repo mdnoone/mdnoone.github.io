@@ -5,9 +5,9 @@ var geoC = (function() {
 	var titleText = "Wisconsin Discount Broadband Programs";	// text for title
 	var subText = "Contact the State Broadband Office";
 	document.write("<p>" + subText.link("https://psc.wi.gov/Pages/Programs/BroadbandTeam.aspx") + "</p>");
-	//var subText = "<p>The Wisconsin State Broadband Office has developed a tool to help the public	identify potential discount internet programs they may be eligible for." +
-	//" Additional provider discount programs may not be included in search results.<br>" +
-	//"<br><b> Enter your address and search for what programs are available. Data is current as of Decemeber 2016 </br></p>";	// optional text for sub title
+	var subText = "<p>The Wisconsin State Broadband Office has developed a tool to help the public	identify potential discount internet programs they may be eligible for." +
+	" Additional provider discount programs may not be included in search results.<br>" +
+	"<br><b> Enter your address and search for what programs are available. Data is current as of Decemeber 2016 </br></p>";	// optional text for sub title
 	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";	// text for error message
 	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";	// text for error message
 	var errorCount = 0;		// controls which error message is displayed
