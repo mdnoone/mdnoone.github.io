@@ -5,7 +5,7 @@ var geoC = (function() {
 	var titleText = "Internet Discount Finder";
 	var subText = "Enter your address to search for available programs.";	// optional text for sub title
 	
-	var subText = "Contact the State Broadband Office";
+	var subText = "<center>Contact the State Broadband Office</center>";
 	document.write("<p>" + subText.link("https://psc.wi.gov/Pages/Programs/BroadbandTeam.aspx") + "</p>");
 	var subText = "<p>Internet providers offer a variety of discounted internet subscriptions based upon a variety of factors such as income, participation in Free and Reduced Cost Lunch programs, housing assistance, veteran status, Medicaid, Supplementary Security Income and more. The Wisconsin State Broadband Office has developed a tool to help identify programs available based upon location..<br>" +
 	"<br><b> Enter your address and search for what programs are available. Data is current as of Decemeber 2016 </br></p>";	// optional text for sub title	
