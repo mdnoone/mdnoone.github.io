@@ -1,64 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Bordner Lab</title>
-      <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-  <h2>Bordner Lab is Under Construction</h2>
-
-<div class="action">
-  <div class="tractor">
-    <div class="body">
-      <div class="hood"></div>
-      <div class="wheel wheel-back"></div>
-      <div class="wheel wheel-front"></div>
-    </div>
-  </div>
+    <meta charset='utf-8' />
+    <title>Broadband Discount</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     
-  <div class="stickman">
-    <div class="body">
-      <div class="head">
-        <div class="hat"></div>
-      </div>
-      <div class="arm arm-right">
-        <div class="limb"></div>
-      </div>
-      <div class="arm arm-left">
-        <div class="limb"></div>
-      </div>
-      <div class="leg leg-right">
-        <div class="limb"></div>
-      </div>
-      <div class="leg leg-left">
-        <div class="limb"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h4>Links can be found below</h4>
-<div>
-	<a href="videopresentation/index.html" target="_blank">Coastal Map</a>
-</div>
-<div>
-	<a href="progress/index.html" target="_blank">Progress Map</a>
-</div>
-<div>
-	<a href="test3d/index.html" target="_blank">Test extruded polygons</a>
-</div>
-<div>
-	<a href="http://uw-mad.maps.arcgis.com/apps/webappviewer/index.html?id=40ea2e9c40ba48f5a13a1b71e1402bba" target="_blank">Leopold Map</a>
-</div>
-<div>
-	<a href="georeferencemap/index.html" target="_blank">Georeference Image Map</a>
-</div>
-
-
-
-  <script src='lib/jquery-1.11.3.min'></script>
-
+    <!-- mapbox gl css -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- mapbox geocoder css-->
+	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
+	<!-- custom css -->
+	<link rel='stylesheet' href='style.css' />
+	<link rel="shortcut icon" href="PSCLogoEnergyFlow.png"
+	
+</head>
+<body>
+	<div id='map'></div>
+	<!--<div id="myAttribution">
+		<a href="http://www.link.wisconsin.gov/" target="_blank">LinkWisconsin</a>
+	</div> -->
+	<div id='myContainer'></div>
+	<div id='myLoadingContainer'>
+		<p>Processing Data...</p>
+		<div class="loader"></div>
+	</div>
+	
+	<div>
+		<span>
+			<center href="https://psc.wi.gov/Pages/Home.aspx" target="_blank">
+				<img src="http://mdnoone.github.io/working_program/images/PSC_logo.png" alt="demo image">
+			</center>
+		</span>
+	
+	</div>		
+	
+<footer>
+  <center><a href="https://psc.wi.gov/Pages/AboutPSCW/TermsAndConditions.aspx">PSC Terms and Conditions</a>.</center>
+</footer>
+	
+	<!-- jquery -->
+	<script src="jquery-3.1.1.min.js"></script> 
+	<!-- turf js -->
+	<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script> 
+	<!-- mapbox gl js -->
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+	<!-- mapbox geocoder js -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js?bbox{-93.688669}{42.362197}{-86.755047}{47.014527}2&access_token={access_token}'></script>
+	<!-- custom script -->
+	<script src='main.js'></script>
 </body>
 </html>
