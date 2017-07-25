@@ -41,14 +41,6 @@ var geoC = (function() {
 		accessToken: mapboxgl.accessToken
 	});
 	
-	import geocoder
-	latlng = [45.3, -66.1]
-	g = geocoder.mapbox("Wisconsin"latlng)
-	g.address
-	g = geocoder.mapbox("200 Queen Street")
-
-...
-	
 	// add geocoder 
 	map.addControl(geocoder);
 	
