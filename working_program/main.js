@@ -41,7 +41,7 @@ var geoC = (function() {
 		accessToken: mapboxgl.accessToken
 	});
 	
-	 import geocoder
+	import geocoder
 	latlng = [45.3, -66.1]
 	g = geocoder.mapbox("Wisconsin"latlng)
 	g.address
