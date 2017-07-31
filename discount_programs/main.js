@@ -29,10 +29,10 @@ var geoC = (function() {
 	$(mySubText).appendTo("#myContainer");
 	
 	// create geocoder
-	var geocoder = new MapboxGeocoder({
+	var geocoder = new MapboxGeocoder({proximity=[-89.6852,44.3022]&access_token={access_token}'
 		accessToken: mapboxgl.accessToken
 	});
-	
+
 	// add geocoder 
 	map.addControl(geocoder);
 	
