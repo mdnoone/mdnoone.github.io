@@ -29,7 +29,9 @@ var geoC = (function() {
 	$(mySubText).appendTo("#myContainer");
 	
 	// create geocoder
-	var geocoder = new MapboxGeocoder({proximity=[-89.6852,44.3022]&accessToken: mapboxgl.accessToken
+	var geocoder = new MapboxGeocoder({
+		proximity=[-89.6852,44.3022],
+		accessToken: mapboxgl.accessToken
 	});
 
 	// add geocoder 
