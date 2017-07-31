@@ -30,7 +30,8 @@ var geoC = (function() {
 	
 	// create geocoder
 	var geocoder = new MapboxGeocoder({
-		accessToken: mapboxgl.accessToken
+		accessToken: mapboxgl.accessToken,
+		proximity: [-89.6852,44.3022],
 	});
 
 	// add geocoder 
