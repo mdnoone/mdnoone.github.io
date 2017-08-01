@@ -29,13 +29,13 @@ var geoC = (function() {
 	$(mySubText).appendTo("#myContainer");
 	
 	// create geocoder
-	var geocoder = new MapboxGeocoder({
-		accessToken: mapboxgl.accessToken
+	//var geocoder = new MapboxGeocoder({
+	//	accessToken: mapboxgl.accessToken
 	//	country: 'US'
-	});
+	//}//);
 	
 	// add geocoder 
-	map.addControl(geocoder);	
+	//map.addControl(geocoder);	
 	
 	// create geocoder
 	//var geocoder = new MapboxGeocoder({
@@ -44,10 +44,9 @@ var geoC = (function() {
 	//});
 
 	// add geocoder 
-	//map.addControl(new MapboxGeocoder({
-	//	accessToken: mapboxgl.accessToken
-    //    country: 'US'
-	//}));
+	map.addControl(new MapboxGeocoder({
+		accessToken: mapboxgl.accessToken
+    }),);
 	//map.addControl(geocoder);
 	
 	// remove and append geocoder
