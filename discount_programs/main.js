@@ -39,6 +39,7 @@ var geoC = (function() {
 	//	accessToken: mapboxgl.accessToken
     //    country: 'US'
 	//}));
+	map.addControl(geocoder);
 	
 	// remove and append geocoder
 	$('.mapboxgl-ctrl-geocoder').detach().appendTo('#myContainer');
