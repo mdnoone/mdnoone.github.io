@@ -45,6 +45,7 @@ var geoC = (function() {
 
 	// add geocoder 
 	map.addControl(new MapboxGeocoder({
+		country: 'US',
 		accessToken: mapboxgl.accessToken
     }),);
 	//map.addControl(geocoder);
