@@ -47,7 +47,7 @@ var geoC = (function() {
 	map.addControl(new MapboxGeocoder({
 		//country: 'US',
 		accessToken: mapboxgl.accessToken
-    }),);
+     }),);
 	//map.addControl(geocoder);
 	
 	// remove and append geocoder
