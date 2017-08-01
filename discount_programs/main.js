@@ -29,10 +29,10 @@ var geoC = (function() {
 	$(mySubText).appendTo("#myContainer");
 	
 	// create geocoder
-	//var geocoder = new MapboxGeocoder({
-	//	accessToken: mapboxgl.accessToken
+	var geocoder = new MapboxGeocoder({
+		accessToken: mapboxgl.accessToken
 	//	country: 'US'
-	//}//);
+	});
 	
 	// add geocoder 
 	//map.addControl(geocoder);	
