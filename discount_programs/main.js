@@ -29,16 +29,16 @@ var geoC = (function() {
 	$(mySubText).appendTo("#myContainer");
 	
 	// create geocoder
-	//var geocoder = new MapboxGeocoder({
-	//	accessToken: mapboxgl.accessToken,
+	var geocoder = new MapboxGeocoder({
+		accessToken: mapboxgl.accessToken,
 	//	country: 'US',
-	//});
+	});
 
 	// add geocoder 
-	map.addControl(new MapboxGeocoder({
-		accessToken: mapboxgl.accessToken
+	//map.addControl(new MapboxGeocoder({
+	//	accessToken: mapboxgl.accessToken
     //    country: 'US'
-	}));
+	//}));
 	
 	// remove and append geocoder
 	$('.mapboxgl-ctrl-geocoder').detach().appendTo('#myContainer');
