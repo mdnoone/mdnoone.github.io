@@ -31,8 +31,8 @@ var geoC = (function() {
 	// create geocoder
 	var geocoder = new MapboxGeocoder({
 		accessToken: mapboxgl.accessToken
-	//	country: 'US'
 	});
+	//	country: 'US'
 	
 	// add geocoder 
 	//map.addControl(geocoder);	
@@ -44,11 +44,11 @@ var geoC = (function() {
 	//});
 
 	// add geocoder 
-	map.addControl(new MapboxGeocoder({
+	//map.addControl(new MapboxGeocoder({
 		//country: 'US',
-		accessToken: mapboxgl.accessToken
-     }),);
-	//map.addControl(geocoder);
+	//	accessToken: mapboxgl.accessToken
+    // }),);
+	map.addControl(geocoder);
 	
 	// remove and append geocoder
 	$('.mapboxgl-ctrl-geocoder').detach().appendTo('#myContainer');
