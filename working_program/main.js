@@ -38,7 +38,7 @@ var geoC = (function() {
 	
 	// create geocoder
 	var geocoder = new MapboxGeocoder({
-		accessToken: mapboxgl.accessToken
+		accessToken: mapboxgl.accessToken,
 		placeholder: "search...",
 		country: 'us',
 		limit: 2,
