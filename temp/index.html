@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Broadband Discount</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    
+    <!-- mapbox gl css -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- mapbox geocoder css-->
+	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
+	<!-- custom css -->
+	<link rel='stylesheet' href='style.css' />
+	<link rel="shortcut icon" href="PSCLogoEnergyFlow.png" />
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-102835601-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-102824833-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-103304736-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+	
+</head>
+<body>
+	<div id='map'></div>
+	<!--<div id="myAttribution">
+		<a href="http://www.link.wisconsin.gov/" target="_blank">LinkWisconsin</a>
+	</div> -->
+	<div id='myContainer'></div>
+	<div id='myLoadingContainer'>
+		<p>Processing Data...</p>
+		<div class="loader"></div>
+	</div>
+	
+	<div>
+		<span>
+			<center href="https://psc.wi.gov/Pages/Home.aspx" target="_blank">
+				<img src="http://mdnoone.github.io/working_program/images/PSC_logo.png" alt="demo image">
+			</center>
+		</span>
+	
+	</div>		
+
+<footer>
+  <center><a href="https://psc.wi.gov/Pages/AboutPSCW/TermsAndConditions.aspx">PSC Terms and Conditions</a></center>
+</footer>
+	
+	<!-- jquery -->
+	<script src="jquery-3.1.1.min.js"></script> 
+	<!-- turf js -->
+	<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script> 
+	<!-- mapbox gl js -->
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+	<!-- mapbox geocoder js -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js?proximity=[-89.6852,44.3022]&access_token={access_token}'></script>
+	<!-- src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js?bbox{-93.688669}{42.362197}{-86.755047}{47.014527}2&access_token={access_token}'></script> -->
+	<!-- custom script -->
+	<script src='main.js'></script>
+</body>
+</html>
