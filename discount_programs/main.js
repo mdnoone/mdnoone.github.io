@@ -31,11 +31,22 @@ var geoC = (function() {
 	// create geocoder
 	var geocoder = new MapboxGeocoder({
 		accessToken: mapboxgl.accessToken,
-		country: "us"
+		placeholder: "search...",
+		country: 'us',
+		limit: 6,
+		bbox: [-93.688669,42.362197,-86.755047,47.014527]
+	//	postcode: '53714'
+		//region: 'new york'
 	});
 	
 	// add geocoder 
 	map.addControl(geocoder);
+	
+	//map.addControl(new MapboxGeocoder({
+	//	accessToken: mapboxgl.accessToken,
+	//	country: 'us'
+	//}));
+	
 	
 	// remove and append geocoder
 	$('.mapboxgl-ctrl-geocoder').detach().appendTo('#myContainer');
