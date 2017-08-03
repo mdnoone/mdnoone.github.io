@@ -41,7 +41,7 @@ var geoC = (function() {
 		accessToken: mapboxgl.accessToken,
 		placeholder: "search...",
 		country: 'us',
-		limit: 2,
+		limit: 6,
 		bbox: [-93.688669,42.362197,-86.755047,47.014527],
 	});
 	
