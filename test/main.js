@@ -157,8 +157,7 @@ var geoC = (function() {
 					if (geocoderControl == false) {
 						addAndPopulateLinks(layer.properties.ATT, layer.properties.CenturyLin, 
 							layer.properties.Charter, layer.properties.Comcast, layer.properties.Frontier, 
-							layer.properties.Mediacom, layer.properties.Midco, layer.properties.Sprint, 
-							layer.properties.Lifeline);
+							layer.properties.Mediacom, layer.properties.Midco, layer.properties.Lifeline); //layer.properties.Sprint,
 						geocoderControl = true;
 					}
 				} catch(err) {
