@@ -178,8 +178,8 @@ var geoC = (function() {
 	};
 	
 	// function to add and populate links
-	function addAndPopulateLinks(ATT, CenturyLin, Charter, Comcast, Frontier, Mediacom, Midco, Sprint, Lifeline) {
-		errorCount = 0;
+	function addAndPopulateLinks(ATT, CenturyLin, Charter, Comcast, Frontier, Mediacom, Midco, Lifeline) {
+		errorCount = 0; //Sprint, 
 		// create links
 		var link1 = document.createElement("a");
 		var link2 = document.createElement("a");
@@ -292,13 +292,13 @@ var geoC = (function() {
 			link7.setAttribute("class", "noLink gonnaRemove");
 		}
 		
-		if (Sprint != "No discount program") {
-			link8.setAttribute("href", Sprint);
-			link8.innerHTML = "<b>Sprint: </b>Discount Program Available";//  + Sprint;
-		} else {
-			link8.innerHTML = "<b>Sprint: </b>No discount program";
-			link8.setAttribute("class", "noLink gonnaRemove");
-		}
+//		if (Sprint != "No discount program") {
+//			link8.setAttribute("href", Sprint);
+//			link8.innerHTML = "<b>Sprint: </b>Discount Program Available";//  + Sprint;
+//		} else {
+//			link8.innerHTML = "<b>Sprint: </b>No discount program";
+//			link8.setAttribute("class", "noLink gonnaRemove");
+//		}
 		
 		if (Lifeline != "No discount program") {
 			link9.setAttribute("href", Lifeline);
