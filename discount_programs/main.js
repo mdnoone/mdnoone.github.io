@@ -187,7 +187,7 @@ var geoC = (function() {
 		var link5 = document.createElement("a");
 		var link6 = document.createElement("a");
 		var link7 = document.createElement("a");
-		//var link8 = document.createElement("a");
+		var link8 = document.createElement("a");
 		var link9 = document.createElement("a");
 		
 		// create breaks
