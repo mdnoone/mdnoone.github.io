@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Coastal Bordner Project Page</title>
+
+    <!-- Bootstrap Core CSS #ccddbb; -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-129066-10', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	<style>
+		#map {
+			height: 700px;
+			margin-top: 20px;
+			position: relative;
+		}
+		.leaflet-top-pane {
+			pointer-events: none;
+		}
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+		.legend {
+			text-align: left;
+			line-height: 18px;
+			color: #555;
+		}
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+		.selected-legend-element{
+			border: 5px solid #f7ff00;
+		}
+		.normal-legend-element{
+			border: 0px solid gray;
+			border-color: rgba(255, 255, 255, .15);
+			-webkit-transition: all 2s ease;
+			-moz-transition: all 2s ease;
+			-o-transition: all 2s ease;
+			transition: all 2s ease;
+		}
+		.transition-class{
+			pointer-events: none;
+			cursor: none;
+		}
+		#tocIcon{
+			margin-left: 15px;
+		}
+		/* for special case on Wisconsin Coastal Management Logo*/
+		@media (min-width: 990px){
+			.long-image-desktop{
+				position: relative;
+				top: 25px;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#">Blah... SCO</a>-->
+            </div>
+             <!--Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+					<li><a href="../" style="color:#333;">App</a></li>
+					<li><a href="#About" style="color:#333;">About Bordner</a></li>
+					<li><a href="#Legend" style="color:#333;">Bordner Legend</a></li>
+					<li><a href="#Download" style="color:#333;">Data Download</a></li>
+					<li><a href="#Resources" style="color:#333;">Resources</a></li>
+					<li><a href="#Funding" style="color:#333;">Funding</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+		<!-- <a name="Top" style="position: absolute; top:-60px;"></a> -->
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+				<h1 class="page-header">
+					<div style="float:left;">Project Page - Coastal Bordner Project</div>		
+				</h1>
+            </div>
+        </div>
+		<div class="row">
+            <div class="col-md-12">
+                <li><a href="#About" style="color:gray;">About Bordner</a></li>
+				<li><a href="#Legend" style="color:gray;">Bordner Legend</a></li>
+                <li><a href="#Download" style="color:gray;">Data Download</a></li>
+				<li><a href="#Resources" style="color:gray;">Resources</a></li>
+                <li><a href="#Funding" style="color:gray;">Funding</a></li>
+             </div>
+        </div>
+		 <hr>
+		<!-- About the grant; #About -->
+        <div class="row">
+            <div class="col-md-12">
+                <a name="About" style="position: absolute; top:-100px;"></a>
+				<h3>About the Bordner Survey:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+				<div class="entry-content">	
+					<p>
+					The Wisconsin Land Economic Inventory, or WLEI, was a comprehensive program of Wisconsin counties conducted from the 1920s through the 1940s that produced detailed, field-based maps with over 100 classes. The impetus for the WLEI was an environmental crisis in rural Wisconsin brought about by land use decisions made decades earlier, especially those associated with the careless logging of the original forests. By the 1920s, most forested land in northern Wisconsin had been cut, and attempts to farm cutover land often met with failure. Remediation efforts required accurate information about land use and land suitability for agriculture and forestry.
+					</p>
+					<p>
+					The WLEI was led by John Bordner, a Wisconsin farmer who earned a PhD in plant physiology in 1908. The first county completed was Bayfield in the far north in 1928. By 1938, all counties with the exception of Milwaukee had been surveyed and most were published by the mod-1940s. Over the years the project was funded by the state and the federal Works Project Administration.
+					</p>
+					<p>
+					The survey’s level of detail was unparalleled. Field workers crossed each square mile section of land at half-mile intervals, creating hand-drawn maps. These were later combined with air photo information to produce a composite map for each six-mile by six-mile township. The maps depicted agricultural and forest cover, including the types of crops grown, and the species, density, and diameter of trees. Cultural features were also recorded, including abandoned and inhabited buildings, improved and unimproved roads, telephone lines, schools, churches, sawmills, logging camps, mines, and cemeteries, to name a few. Physical features such as lakes, rivers, wetlands, beaches and shoals were also compiled. Today these maps provide a detailed inventory of the physical and cultural landscape of the state at a time of significant change.
+					</p>
+					<p>
+					The original paper maps from the Bordner Survey have been archived at the Wisconsin Historical Society. The maps have also been scanned by the University of Wisconsin Digital Collections Center and are available online. However, paper maps and scanned images cannot easily be used in a digital environment to perform analyses, merge with other map layers and air photos, or produce custom visualizations. To enable these capabilities, the maps must be digitized using GIS (Geographic Information Systems) software. 
+					</p>
+					<p>
+					The Forest Landscape Ecology Lab, in the Department of Forest and Wildlife Ecology at the University of Wisconsin-Madison, has been working for several years on the effort to digitize the Bordner maps. More recently, the State Cartographer’s Office, in the Department of Geography at UW-Madison, has joined the effort. The Bordner maps represent only one piece of the puzzle we ultimately want to put together. Our vision is to develop an online portal that allows users to access and visualize a host of historic GIS databases statewide. 
+					</p>
+				</div>
+			</div>
+        </div>
+        <hr>
+		
+		<!-- Data Download; #Download -->
+        <div class="row">
+            <div class="col-md-12">
+				<a name="Download" style="position: absolute; top:-100px;"></a>
+                <h3>Data Download:</h3>
+            </div>
+        </div>
+        <div class="row">
+			<div class="col-md-4">Download the Digitized point, line, and polygon Bordner data:</div> 
+			<div class="col-md-8">
+				<li><a href="../../03_GIS_Data/polys/final_coastal_polygons.zip" target="_blank" onClick="ga('send','event','BordnerCoastal','BordnerDataDownload','BordnerPolygons');">Bordner Polygons - Version 1.0.0 (82 MB)</a></li>
+				<li><a href="../../03_GIS_Data/points_lines/final_coastal_points.zip" target="_blank" onClick="ga('send','event','BordnerCoastal','BordnerDataDownload','BordnerPoints');">Bordner Points - Version 1.0.0 (1.1 MB)</a></li>
+				<li><a href="../../03_GIS_Data/points_lines/final_coastal_lines.zip" target="_blank" onClick="ga('send','event','BordnerCoastal','BordnerDataDownload','BordnerLines');">Bordner Lines - Version 1.0.0 (8.8 MB)</a></li>
+			</div>
+        </div>
+        <hr>
+		
+		<!-- Resources; #Resources -->
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Resources:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a name="Resources" style="position: absolute; top:-100px;"></a>
+				<!--<p>Various resoures related to the Bordner Project:</p>-->
+            </div>
+        </div>
+		<div class="row">		
+			<!--<div class="col-md-4">History of the Survey:</div>-->
+			<div class="col-md-8">
+				<li><a href="https://www.library.wisc.edu/steenbock/wisconsin-land-economic-inventory-the-bordner-survey-land-cover-maps/" target="_blank">History of the Survey</a></li>
+			</div>
+			<!--<div class="col-md-4">Access the original Bordner maps (scanned):</div>-->
+			<div class="col-md-8">
+				<li><a href="https://uwdc.library.wisc.edu/collections/econatres/wilandinv/" target="_blank">Access the original Bordner maps (scanned)</a></li>
+			</div>
+			<!--<div class="col-md-4">WLIA Presentaion of the Bordner digitization project:</div>--> 
+			<div class="col-md-8">
+				<li><a href="https://www.slideshare.net/veregin/historical-geospatial-data-for-coastal-management-in-wisconsin" target="_blank">WLIA Presentaion of the Bordner digitization project</a></li>
+			</div>
+			<!--<div class="col-md-4">Bordner digitization project handout:</div>--> 
+			<div class="col-md-8">
+				<li><a href="bordner_flyer.pdf" target="_blank">Bordner digitization project handout</a></li>
+			</div>
+        </div>
+        <hr>
+		
+		<!-- Bordner Legend; #Legend -->
+        <div class="row">
+			<div class="col-md-3">
+                <h3>Bordner Legend:</h3>
+            </div></br>
+			<a name="Legend"></a></br></br>
+			<div id="accordion" role="tablist" aria-multiselectable="true"></div>
+        </div>
+        <hr>
+
+		<!-- Bordner Legend; #Legend 
+        <div class="row">
+			<div id="accordion2" role="tablist" aria-multiselectable="true">
+				<div class="card" style="padding-left:10px; padding-right:10px;">
+					<div class="card-header" role="tab" id="headingOne">
+						<a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration: none;">
+							<div style="background-color:#aac459; width:50px; height:30px; float:left; padding-bottom:5px;"></div>
+							<div style="width:10px; height:30px; float:left;"></div>
+							<div style="color:gray; text-align:left;">
+								Level 1 Class Definition: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+							</div>
+						</a>
+					</div>
+					</br>
+					<div id="collapseOne" class="collapse" style="padding-left:70px;" name="XXXX" role="tabpanel" aria-labelledby="headingOne">
+						 <div class="card-block">
+							<div style="background-color:#aac459; width:50px; height:30px; float:left; padding-bottom:5px;"></div>
+							<div style="width:10px; height:30px; float:left;"></div>
+							<div style="color:gray; text-align:left;">
+								Level 2 Class Definition: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+							</div>
+							<div style="background-color:#aac459; width:50px; height:30px; float:left; padding-bottom:5px;"></div>
+							<div style="width:10px; height:30px; float:left;"></div>
+							<div style="color:gray; text-align:left;">
+								Level 2 Class Definition: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <hr>-->
+		
+		<!-- Funding; #Funding -->
+        <div class="row">
+			<div class="col-md-3">
+				<a name="Funding" style="position: absolute; top:-100px;"></a>
+                <h3>Funding:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Funded by the Wisconsin Coastal Management Program and the National Oceanic and Atmospheric Administration, Office for Coastal Management under the Coastal Zone Management Act, Grant #NA16NOS4190108</p>
+				<div style="text-align: center;">
+					<div class="col-md-6">
+						<a href="http://www.doa.state.wi.us/divisions/intergovernmental-relations/Wisconsin-Coastal-Management" target="_blank">
+							<img src="../img/branding/WCMP.png" alt="WCMP" style="width:37.5%; padding-bottom: 5%; padding-top: 5%;">
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a href="http://www.noaa.gov/" target="_blank">
+							<img src="../img/branding/NOAA.gif" alt="NOAA" style="width:22.5%; border-radius: 6px;">
+						</a>
+					</div>
+				</div>
+				<p>
+				The Bordner digitizing project has also received funding from the University of Wisconsin-Madison Graduate School, the UW-Madison College of Agricultural and Life Sciences, Wisconsin Alumni Research Foundation Research Fund, and the Wisconsin Alumni Research Foundation Kellett Mid-Career Faculty Award.
+				</p>
+			</div>
+        </div>
+        <hr>
+		
+		<!-- Project Team; #Team -->
+        <div class="row">
+			<div class="col-md-3">
+				<a name="Team" style="position: absolute; top:-100px;"></a>
+                <h3>Project Team:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>A joint effort of the <a href="http://labs.russell.wisc.edu/landscape/" target="_blank">Forest Ecosystem and Landscape Ecology Lab</a> and the <a href="http://www.sco.wisc.edu/" target="_blank">State Cartographer's Office</a>.</p>
+                <div style="text-align: center;">
+					<div class="col-md-6">
+						<a href="http://labs.russell.wisc.edu/landscape/" target="_blank">
+							<img src="../img/branding/FLEL.gif" alt="FLEL" style="width:30%; padding-bottom: 5%; padding-top: 5%;">
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a href="http://www.sco.wisc.edu/" target="_blank">
+							<img src="../img/branding/SCO.png" alt="SCO" style="width:27%; border-radius: 6px; padding-bottom: 5%; padding-top: 5%;">
+						</a>
+					</div>
+				</div>
+			</div>
+        </div>
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12" style="text-align: center;">
+                    <a href="#Top" style="color: gray;"> Back to top </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="../data/temp_classes.js"></script>
+	<script>
+		var embedded = true;
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip(); 
+			console.log(tempClasses2)
+			console.log(yellowDocClassDefinitions)
+			var level2HTMl = ""
+			var level1HTMl = ""
+			for(var i = 0; i < tempClasses2.classes.length; i++) {
+				var item = tempClasses2.classes[i];
+				var augmentedDef = ""
+				if(yellowDocClassDefinitions[item.code]){
+					var augItem = yellowDocClassDefinitions[item.code]
+					augmentedDef =  '<p><b>' + augItem.Class_Name + "</b>: " + augItem.Class_Definition  + '</p>'  //'<li><b>YELLOW DEF. GENERAL: </b>' + augItem.General_Group + ": " + augItem.General_Group_Definition  + '</li>' +											
+				}
+				var level1Item = (item.level1).replace(/ |,|\.|\)|\(/g, "_");
+				var level2Item = (item.level2).replace(/ |,|\.|\)|\(/g, "_");
+				var futureItem = "";
+				if (tempClasses2.classes[i+1]){
+					futureItem = tempClasses2.classes[i+1]["level1"]
+					futureItem2 = tempClasses2.classes[i+1]["level2"]
+				}
+				if (tempClasses2.classes[i]["level1"] == futureItem){
+					console.log(item.level1 + " --- " + item.level2)
+					// not last class in group
+					if (tempClasses2.classes[i]["level2"] == futureItem2){
+						// Multiple codes in group, list out the codes for use in definition
+					}else{
+						// Create level 2 definition
+						//console.log(item.level2)
+						level2HTMl = level2HTMl + 
+						'<div>' +
+							'<div id="' + level2Item + '" class="normal-legend-element transition-class" style="background-color:' + item.color2 + '; width:50px; height:30px; float:left; padding-bottom:5px;"></div>' +
+							'<div style="width:10px; height:30px; float:left;"></div>' +
+							'<div style="text-align:left; color:gray;">' +
+								item.level2 + augmentedDef +
+							'</div>' + 
+						'</div><br/>'
+					}
+				}else{
+					// last class in group
+					console.log(item.level1 + " --- " + item.level2)
+					level1HTMl = level1HTMl + 
+					'<div class="card chev-closed" name="' + level1Item +'Scroll" id="' + level1Item + 'Scroll" onClick="dispatchButtonClick(event, this.id)" style="padding-left:10px; padding-right:10px;">' +
+						'<div class="card-header" role="tab" id="headingOne">' +
+							'<a data-toggle="collapse" data-parent="#accordion2" href="#collapse' + level1Item + '" aria-expanded="false" aria-controls="collapse' + level1Item + '" style="text-decoration: none;">' +
+								'<div style="background-color:' + item.color1 + '; width:50px; height:30px; float:left; padding-bottom:5px;"></div>' +
+								'<div style="width:10px; height:30px; float:left;"></div>' +
+								'<div style="text-align:left; color:gray;">' +
+									item.level1 +
+									'<span class="transition-class" id="tocButton'+ level1Item +'Scroll">' +
+										'<span id="tocIcon" class="icon-class glyphicon glyphicon-chevron-down transition-class"></span>' +
+									'</span>' +	
+								'</div>' +	
+							'</a>' +
+						'</div>' +
+						'<a name="' + level1Item + '" style="position: absolute; top:-100px;"></a>' +
+						'</br>' +
+						'<div id="collapse' + level1Item + '" class="collapse" style="padding-left:70px;" name="' + level1Item + '" role="tabpanel" aria-labelledby="heading' + level1Item + '">' +
+							 '<div class="card-block">' +
+								level2HTMl +
+								'<div>' +
+									'<div id="' + level2Item + '" class="normal-legend-element transition-class" style="background-color:' + item.color2 + '; width:50px; height:30px; float:left; padding-bottom:5px;"></div>' +
+									'<div style="width:10px; height:30px; float:left;"></div>' +
+									'<div style="text-align:left; color:gray;">' +
+										item.level2 + augmentedDef +
+									'</div>' + 
+								'</div><br/>' +
+							'</div>' +
+						'</div>' + 
+					'</div>'
+					level2HTMl = ""
+					}
+				}
+			$( "#accordion" ).append( level1HTMl );
+		});
+		function dispatchButtonClick(e,idIN){
+			//console.log($("#" + idIN).hasClass( "chev-open"))
+			//console.log(idIN)
+			if ($("#" + idIN).hasClass( "chev-open")){
+				$("#tocButton" + idIN).html('<span id="tocIcon" class="icon-class glyphicon glyphicon-chevron-down transition-class"></span>')
+				$("#" + idIN).addClass( "chev-closed")
+				$("#" + idIN).removeClass( "chev-open")
+			}else{
+				$("#tocButton" + idIN).html('<span id="tocIcon" class="icon-class glyphicon glyphicon-chevron-up transition-class"></span>')
+				$("#" + idIN).addClass( "chev-open")
+				$("#" + idIN).removeClass( "chev-closed")
+			}
+		}
+		$(document).ready(function() {
+			var url = document.location.toString();
+			if (url.match('#') ) {
+				for(var i = 0; i < tempClasses2.classes.length; i++) {
+					if ((tempClasses2.classes[i]["level2"]).replace(/ |,|\.|\)|\(/g, "_") == url.split('#')[1]){
+						$('[name="'+ (tempClasses2.classes[i]["level1"]).replace(/ |,|\.|\)|\(/g, "_") +'"]').addClass('in');	
+						var idHash = (tempClasses2.classes[i]["level1"]).replace(/ |,|\.|\)|\(/g, "_") + "Scroll";
+						//console.log(idHash)
+						$("#tocButton" + idHash).html('<span id="tocIcon" class="icon-class glyphicon glyphicon-chevron-up transition-class"></span>')
+						$("#" + idHash).removeClass( "chev-closed")
+						$("#" + idHash).addClass( "chev-open")
+						
+						$('html, body').animate({
+						   'scrollTop':   $('[name="' + (tempClasses2.classes[i]["level1"]).replace(/ |,|\.|\)|\(/g, "_") + 'Scroll"]').offset().top - 100
+						}, 1000);
+						$('#' + url.split('#')[1]).addClass('selected-legend-element')
+						$('#' + url.split('#')[1]).removeClass('normal-legend-element')
+						setTimeout(function(){ 
+							$('#' + url.split('#')[1]).removeClass('selected-legend-element')
+							$('#' + url.split('#')[1]).addClass('normal-legend-element')						
+						}, 3000);
+						break;
+					}
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>

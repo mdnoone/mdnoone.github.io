@@ -161,7 +161,7 @@ var geoC = (function() {
 					if (geocoderControl == false) {
 						addAndPopulateLinks(layer.properties.ATT, layer.properties.CenturyLin, 
 							layer.properties.Charter, layer.properties.Comcast, layer.properties.Frontier, 
-							layer.properties.Mediacom, layer.properties.Midco, layer.properties.Lifeline); //layer.properties.Sprint,
+							layer.properties.Mediacom, layer.properties.Midco, layer.properties.Sprint, layer.properties.Lifeline); //layer.properties.Sprint,
 						geocoderControl = true;
 					}
 				} catch(err) {
@@ -192,7 +192,7 @@ var geoC = (function() {
 		var link5 = document.createElement("a");
 		var link6 = document.createElement("a");
 		var link7 = document.createElement("a");
-//		var link8 = document.createElement("a");
+		var link8 = document.createElement("a");
 		var link9 = document.createElement("a");
 		
 		// create breaks
@@ -203,7 +203,7 @@ var geoC = (function() {
 		var break5 = document.createElement("br");
 		var break6 = document.createElement("br");
 		var break7 = document.createElement("br");
-//		var break8 = document.createElement("br");
+		var break8 = document.createElement("br");
 		var break9 = document.createElement("br");
 		
 		// attribute links with 'gonnaRemove' class
@@ -214,7 +214,7 @@ var geoC = (function() {
 		link5.setAttribute("class", "gonnaRemove");
 		link6.setAttribute("class", "gonnaRemove");
 		link7.setAttribute("class", "gonnaRemove");
-//		link8.setAttribute("class", "gonnaRemove");
+		link8.setAttribute("class", "gonnaRemove");
 		link9.setAttribute("class", "gonnaRemove");
 		
 		// attribute breaks with 'gonnaRemove' class
@@ -225,7 +225,7 @@ var geoC = (function() {
 		break5.setAttribute("class", "gonnaRemove");
 		break6.setAttribute("class", "gonnaRemove");
 		break7.setAttribute("class", "gonnaRemove");
-//		break8.setAttribute("class", "gonnaRemove");
+		break8.setAttribute("class", "gonnaRemove");
 		break9.setAttribute("class", "gonnaRemove");
 		
 		// attribute links with blank target for opening in new tab
@@ -236,7 +236,7 @@ var geoC = (function() {
 		link5.setAttribute("target", "_blank");
 		link6.setAttribute("target", "_blank");
 		link7.setAttribute("target", "_blank");
-//		link8.setAttribute("target", "_blank");
+		link8.setAttribute("target", "_blank");
 		link9.setAttribute("target", "_blank");
 		
 		// check if properties has link
@@ -296,13 +296,13 @@ var geoC = (function() {
 			link7.setAttribute("class", "noLink gonnaRemove");
 		}
 		
-//		if (Sprint != "No discount program") {
-//			link8.setAttribute("href", Sprint);
-//			link8.innerHTML = "<b>Sprint: </b>Discount Program Available";//  + Sprint;
-//		} else {
-//			link8.innerHTML = "<b>Sprint: </b>No discount program";
-//			link8.setAttribute("class", "noLink gonnaRemove");
-//		}
+		if (Sprint != "No discount program") {
+			link8.setAttribute("href", Sprint);
+			link8.innerHTML = "<b>Sprint: </b>Discount Program Available";//  + Sprint;
+		} else {
+			link8.innerHTML = "<b>Sprint: </b>No discount program";
+			link8.setAttribute("class", "noLink gonnaRemove");
+		}
 		
 		if (Lifeline != "No discount program") {
 			link9.setAttribute("href", Lifeline);
@@ -328,8 +328,8 @@ var geoC = (function() {
 		$(break6).appendTo("#myContainer");
 		$(link7).appendTo("#myContainer");
 		$(break7).appendTo("#myContainer");
-//		$(link8).appendTo("#myContainer");
-//		$(break8).appendTo("#myContainer");
+		$(link8).appendTo("#myContainer");
+		$(break8).appendTo("#myContainer");
 		$(link9).appendTo("#myContainer");
 		$(break9).appendTo("#myContainer");
 		
