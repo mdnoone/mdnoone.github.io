@@ -298,7 +298,7 @@ var geoC = (function() {
 		
 		if (Sprint != "No discount program") {
 			link8.setAttribute("href", Sprint);
-			link8.innerHTML = "<b>Sprint: </b>Discount Program Available";//  + Sprint;
+			link8.innerHTML = "<b>Sprint: </b>Discount Program Available";//  + SSSSSprint;
 		} else {
 			link8.innerHTML = "<b>Sprint: </b>No discount program";
 			link8.setAttribute("class", "noLink gonnaRemove");
