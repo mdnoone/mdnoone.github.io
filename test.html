@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title></title>
+
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/dojo/dijit/themes/tundra/tundra.css">
+
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: none;
+            background-color: #000000;
+        }
+
+        #metac {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            width: 13em;
+            height: 9em;
+            z-index: 40;
+            background: #fff;
+            color: #777;
+            padding: 5px;
+            border: 2px solid #666;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            font-family: arial;
+            font-size: 0.9em;
+        }
+
+            #metac h3 {
+                color: #666;
+                font-size: 1.1em;
+                padding: 0px;
+                margin: 0px;
+                display: inline-block;
+            }
+
+        #header {
+            margin: 0px;
+            padding: 0px;
+            text-align: right;
+            height: 16px;
+        }
+
+        #title {
+            font-size: 150%;
+            color: #ffffff;
+            text-align: center;
+            margin: 2px;
+        }
+
+        #subfooter {
+            font-size: small;
+            color: #ffffff;
+            font-size: 13px;
+            text-align: center;
+            margin: 2px;
+        }
+
+        #LayerDrop {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 50;
+        }
+
+        #appToolbarButtons {
+            float: right;
+            vertical-align: middle;
+        }
+
+        #layerBTN {
+            vertical-align: right;
+            top: 15px;
+            cursor: pointer;
+            margin-right: 5px;
+            z-index: 50;
+            cursor: pointer;
+            right: 10px;
+            width: 65px !important;
+            padding: 5px;
+            position: absolute;
+            -moz-box-shadow: inset 0px 0px 35px 0px #ccd8e0;
+            -webkit-box-shadow: inset 0px 0px 35px 0px #ccd8e0;
+            box-shadow: 1px 6px 12px #0093CA inset, -1px -10px 5px #00ACEC inset, 1px 2px 1px rgba(0, 0, 0, 0);
+            background-color: #00ACEC;
+            background: -moz-linear-gradient( center top, #145bb3 5%, #468ccf 100% );
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#145bb3', endColorstr='#468ccf');
+            -webkit-border-top-left-radius: 37px;
+            -moz-border-radius-topleft: 37px;
+            border-top-left-radius: 37px;
+            -webkit-border-top-right-radius: 37px;
+            -moz-border-radius-topright: 37px;
+            border-top-right-radius: 37px;
+            -webkit-border-bottom-right-radius: 37px;
+            -moz-border-radius-bottomright: 37px;
+            border-bottom-right-radius: 37px;
+            -webkit-border-bottom-left-radius: 37px;
+            -moz-border-radius-bottomleft: 37px;
+            border-bottom-left-radius: 37px;
+            text-indent: 0;
+            display: inline-block;
+            color: #FFFFFF;
+            font-family: Arial;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+            text-align: center;
+            text-shadow: 0px 0px 0px #072038;
+        }
+    </style>
+
+    <script src="http://js.arcgis.com/3.8/"></script>
+
+    <script>
+        var map;
+        var legendLayers = [];
+        require([
+          "dojo/parser",
+          "esri/map",
+          "esri/layers/FeatureLayer",
+          "esri/layers/ArcGISDynamicMapServiceLayer",
+          "dojo/_base/array",
+          "esri/renderers/SimpleRenderer",
+          "dijit/form/RadioButton",
+          "dojo/dom",
+          "dojo/dom-construct",
+          "dijit/layout/BorderContainer",
+          "dijit/layout/ContentPane",
+          "dijit/Dialog",
+
+          "dojo/domReady!"
+        ], function (
+             parser,
+             Map,
+             FeatureLayer,
+             ArcGISDynamicMapServiceLayer,
+             array,
+             SimpleRenderer,
+             RadioButton,
+             dom,
+             domConstruct
+        ) {
+            map = new Map("map", {
+                basemap: "national-geographic",
+                fadeOnZoom: true,
+                center: [-89.013, 44.622005],
+                zoom: 6
+            });
+
+            // create layout dijits
+            parser.parse();
+
+            var cities = new FeatureLayer("http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/0", {
+                mode: FeatureLayer.MODE_ONDEMAND,
+                id: "City",
+                outFields: ["*"]
+            });
+
+            cities.setVisibility(true);
+
+            var radarRest = new FeatureLayer("http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/2", {
+                mode: FeatureLayer.MODE_ONDEMAND,
+                id: "States",
+                outFields: ["*"]
+            });
+
+			radarRest.setVisibility(false);
+			
+			var rivers = new FeatureLayer("http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/1", {
+                mode: FeatureLayer.MODE_ONDEMAND,
+                id: "Rivers",
+                outFields: ["*"]
+            });
+			
+			rivers.setVisibility(false);
+			
+			var att2 = new FeatureLayer("http://uat.gis.wi.gov/arcgis/rest/services/PSC_ESH/ATT2/MapServer/0", {
+               mode: FeatureLayer.MODE_ONDEMAND,
+               id: "att2",
+               outFields: ["*"]
+            });
+		
+			att2.setVisibility(true);
+						
+            map.addLayers([cities, radarRest, rivers, att2]);
+
+            ////Add layers to Legend ////This Also Sets Order of Layers ////
+            legendLayers.push({ layer: cities, title: 'Cities' });
+            legendLayers.push({ layer: radarRest, title: 'States' });
+			legendLayers.push({ layer: rivers, title: 'Rivers' });
+			legendLayers.push({ layer: att2, title: 'att2' });			
+			
+            ///////////// Radio buttons Created////////////////////////////////////
+            map.on('layers-add-result', function () {
+
+                //add radio buttons
+                array.forEach(legendLayers, function (layer) {
+                    var layerName = layer.title;
+                    var radioButton = new RadioButton({
+                        name: "radio" + layer.layer.id,
+                        value: layer.layer.id,
+                        checked: layer.layer.visible,
+                        name: "layers"
+                    });
+
+                    radioButton.on("change", function () {
+                        var targetLayer = map.getLayer(this.value);
+                        targetLayer.setVisibility(!targetLayer.visible);
+                        this.checked = targetLayer.visible;
+                    });
+
+                    //add the check box and label to the TOC
+                    domConstruct.place(radioButton.domNode, "toggle",
+                        "after");
+                    var checkLabel = domConstruct.create('label', {
+                        'for': radioButton.name,
+                        innerHTML: layerName
+                    }, radioButton.domNode, "after");
+                    domConstruct.place("<br /><hr/>", checkLabel,
+                        "after");
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body class="tundra">
+    <div id="content" data-dojo-type="dijit/layout/BorderContainer" design="headline" gutters="true" style="width: 100%; height: 100%; margin: 0;">
+        <div id="header" class="shadow roundedCorners" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+            <div id="title">
+                <div id="subfooter">
+                </div>
+            </div>
+        </div>
+
+        <div id="map" data-dojo-type="dijit/layout/ContentPane" region="center">
+            <div id="appToolbarButtons">
+                <button id="layerBTN" type="button" onclick="myLayersDialog.show();"> Layers</button>
+            </div>
+        </div>
+    </div>
+
+    <!--</div>-->
+    <!--Start Layers Dialog Btn -->
+
+    <div data-dojo-type="dijit/Dialog" data-dojo-id="myLayersDialog" style="width: 260px; height: 25em; overflow: auto;" title="Layers">
+        <div id="toggle" style="padding: 2px 2px;"></div>
+        <div class="dijitDialogPaneActionBar">
+            <button data-dojo-type="dijit/form/Button" type="button" onclick="myLayersDialog.hide()">OK</button>
+        </div>
+    </div>
+
+    <!--Start Legend Dialog BTN  -->
+</body>
+
+</html>
