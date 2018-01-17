@@ -1,0 +1,68 @@
+body {
+  font-family: arial;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+h3, ul, p {
+  margin-top: 0;
+}
+
+h1,h2 {
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 0 20px black;
+  color: white;
+}
+h1 {
+  font-size: 7em;
+  margin-bottom: 0;
+}
+
+h3 {
+  width: 20%;
+  min-width: 3em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #c56e6b;
+}
+a:visited {
+  color: #a05d5b;
+}
+
+#title {
+  background-image: url(../img/captureSaveDarkest.jpg);
+  overflow: auto;
+  padding: 4em 0;
+  width: 70%;
+  min-width: 720px;
+  margin: 4em auto 0 auto;
+  border-radius: 10px;
+}
+.section {
+  padding: 4em 15% 0 15%;
+}
+.section:last-of-type {
+  padding-bottom: 4em;
+}
+.right-content {
+  display: inline-block;
+  padding-left: 10px;
+  margin-left: 2em;
+  border-left: solid gray 1px;
+}
+p:last-child {
+  margin-bottom: 0;
+}

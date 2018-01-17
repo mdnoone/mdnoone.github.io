@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Sky Geocoder Development</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    
+    <!-- leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <!-- leaflet geocoder css -->
+    <link rel="stylesheet" href="Control.Geocoder.css" />
+	<!-- custom css -->
+	<link rel='stylesheet' href='style.css' />
+	
+</head>
+<body>
+	<div id='map'></div>
+	<div id="myAttribution">
+		<a href="http://skywilliams.site/" target="_blank">Developed with Sky</a>
+	</div>
+	<div id='myContainer'></div>
+	<div id='myLoadingContainer'>
+		<p>Processing Data...</p>
+		<div class="loader"></div>
+	</div>
+	
+	
+	
+	<!-- jquery -->
+	<script src="jquery-3.1.1.min.js"></script> 
+	<!-- turf js -->
+	<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script> 
+	<!-- leaflet js -->
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<!-- leaflet geocoder js -->
+	<script src="Control.Geocoder.js"></script>
+	<!-- custom script -->
+	<script src='main.js'></script>
+</body>
+</html>
