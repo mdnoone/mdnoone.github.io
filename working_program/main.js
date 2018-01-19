@@ -174,7 +174,7 @@ var geoC = (function() {
 					
 					
 			} else {
-				width = width + .5;
+				width = width + 2;
 				elem.style.width = width + '%';
 				//elem.innerHTML = width * 1 + '%';
 			}
