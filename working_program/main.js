@@ -12,8 +12,8 @@ var geoC = (function() {
 	
 	//var loaderText = "Loading...";
 	//var subText = "";
-	var errorText = "It appears something has gone wrong. Please search this address again, or choose a different address.";
-	var errorText2 = "The address you have chosen is not valid. Please choose a new address.";
+	var errorText = "It appears something has gone wrong. Please try refreshing your browser, or choose a different address.";
+	var errorText2 = "The address you have chosen is not valid. Please try refreshing your browser, or choose a different address";
 	var errorCount = 0;
 	
 	// create and connect to map
