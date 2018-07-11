@@ -181,7 +181,7 @@ var geoC = (function() {
 	};
 	
 	// function to add and populate links
-	function addAndPopulateLinks(ATT, CenturyLin, Charter, Comcast, Frontier, Mediacom, Midco, Sprint, Lifeline) {
+	function addAndPopulateLinks(Charter, Norvado) {
 		errorCount = 0;
 		// create links
 		var link1 = document.createElement("a");
