@@ -9,7 +9,7 @@ var geoC = (function() {
 	document.write("<p>" + subText.link("https://psc.wi.gov/Pages/Programs/BroadbandTeam.aspx") + "</p>");
 	var subText = "<p>Internet providers offer an array of discounted internet subscriptions based upon a variety of factors such as income, participation in Free and Reduced Cost Lunch programs, housing assistance, veteran status, Medicaid, Supplementary Security Income and more. <br>" +
 	"<br>The Wisconsin State Broadband Office has developed a tool to help identify programs available based upon location. <br>" +
-	"<br><b> Enter your address to search for available programs. Data is current as of Decemeber 2016 </br></p>";	// optional text for sub title	
+	"<br><b> Enter your address to search for available programs. Data is current as of December 2016 </br></p>";	// optional text for sub title	
 	
 	//var loaderText = "Loading...";
 	//var subText = "";
@@ -160,7 +160,7 @@ var geoC = (function() {
 				
 				try {
 					if (geocoderControl == false) {
-						addAndPopulateLinks(layer.properties.Charter, layer.properties.Norvado); //layer.properties.Sprint, CenturyLin, layer.properties.Charter, layer.properties.Comcast, layer.properties.Frontier, layer.properties.Mediacom, layer.properties.Midco, layer.properties.Sprint, layer.properties.Lifeline
+						addAndPopulateLinks(layer.properties.Charter, layer.properties.Norvado);
 						geocoderControl = true;
 					}
 				} catch(err) {
