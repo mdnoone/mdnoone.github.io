@@ -162,7 +162,7 @@ var geoC = (function() {
 					if (geocoderControl == false) {
 						addAndPopulateLinks(layer.properties.Amery_Telc, layer.properties.Baldwin_Te, 
 							layer.properties.Bayland_Te, layer.properties.BELMONT_TE, 
-							layer.properties.Bergen_Tel, layer.properties.Bloomer_Te, layer.properties.BRUCETEL_C, layer.properties.Cellcom, layer.properties.Chibardun_, layer.properties.Citizens_T, layer.properties.Clear_Lake, layer.properties.Frontier_C); //layer.properties.BRUCETEL_C,
+							layer.properties.Bergen_Tel, layer.properties.Bloomer_Te, layer.properties.BRUCETEL_C, layer.properties.Cellcom, layer.properties.Chibardun_, layer.properties.Citizens_T, layer.properties.Clear_Lake, layer.properties.Cochrane_C); //layer.properties.BRUCETEL_C,
 						geocoderControl = true;
 					}
 				} catch(err) {
@@ -183,7 +183,7 @@ var geoC = (function() {
 	};
 	
 	// function to add and populate links
-	function addAndPopulateLinks(Amery_Telc, Baldwin_Te, Bayland_Te, BELMONT_TE, Bergen_Tel, Bloomer_Te, BRUCETEL_C, Cellcom, Chibardun_, Citizens_T, Clear_Lake, Frontier_C) {
+	function addAndPopulateLinks(Amery_Telc, Baldwin_Te, Bayland_Te, BELMONT_TE, Bergen_Tel, Bloomer_Te, BRUCETEL_C, Cellcom, Chibardun_, Citizens_T, Clear_Lake, Cochrane_C) {
 		errorCount = 0;
 		// create links
 		var link1 = document.createElement("a");
@@ -344,11 +344,11 @@ var geoC = (function() {
 			link12.setAttribute("class", "noLink gonnaRemove");
 		}	
 
-		if (Frontier_C != "No Wireline Lifeline Program Available") {
-			link13.setAttribute("href", Frontier_C);
-			link13.innerHTML = "<b>Frontier_C: </b>Discount Program Available";//  + Frontier_C;
+		if (Cochrane_C != "No Wireline Lifeline Program Available") {
+			link13.setAttribute("href", Cochrane_C);
+			link13.innerHTML = "<b>Cochrane_C: </b>Discount Program Available";//  + Cochrane_C;
 		} else {
-			link13.innerHTML = "<b>Frontier_C: </b>No Wireline Lifeline Program Available";
+			link13.innerHTML = "<b>Cochrane_C: </b>No Wireline Lifeline Program Available";
 			link13.setAttribute("class", "noLink gonnaRemove");
 		}			
 		
