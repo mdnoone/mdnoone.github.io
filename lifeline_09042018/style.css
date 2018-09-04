@@ -25,7 +25,6 @@ body {
 	margin: 0 auto;
 	text-align: center;
 	visibility: visible;
-	overflow: auto;
 	z-index: 100;
 	margin-bottom: 50px;
 }
@@ -45,7 +44,7 @@ body {
 	right: 0;
 	margin: 0 auto;
 	text-align: center;
-	overflow: auto;
+	overflow-y: hidden;
 	z-index: 99;
 	opacity: .5;
 	margin-bottom: 50px;

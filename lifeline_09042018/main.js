@@ -2,19 +2,19 @@
 var geoC = (function() {
 	// declare variables
 	var geocoderControl = false;
-	var titleText = "Lifeline Discount Finder";
+	var titleText = "Internet Discount Finder";
 	var subText = "Enter your address to search for available programs.";	// optional text for sub title
 	
 	var subText = "<center>Contact the State Broadband Office</center>";
 	document.write("<p>" + subText.link("https://psc.wi.gov/Pages/Programs/BroadbandTeam.aspx") + "</p>");
-/*	var subText = "<p>Internet providers offer an array of discounted internet subscriptions based upon a variety of factors such as income, participation in Free and Reduced Cost Lunch programs, housing assistance, veteran status, Medicaid, Supplementary Security Income and more. <br>" +
+	var subText = "<p>Internet providers offer an array of discounted internet subscriptions based upon a variety of factors such as income, participation in Free and Reduced Cost Lunch programs, housing assistance, veteran status, Medicaid, Supplementary Security Income and more. <br>" +
 	"<br>The Wisconsin State Broadband Office has developed a tool to help identify programs available based upon location. <br>" +
-	"<br><b> Enter your address to search for available programs. Data is current as of December 2016 </br></p>";	// optional text for sub title*/	
+	"<br><b> Enter your address to search for available programs. Data is current as of December 2016 </br></p>";	// optional text for sub title	
 	
 	//var loaderText = "Loading...";
 	//var subText = "";
-	var errorText = "It appears something has gone wrong. Please try refreshing your browser, or choose a different address.";
-	var errorText2 = "The address you have chosen is not valid. Please try refreshing your browser, or choose a different address";
+	var errorText = "It appears there are no provider discounts at this address. If you believe there is either AT&T, CenturyLink, Charter, Comcast, Mediacom, Midconitental or Sprint Service at the address contact one of those providers for a potential discount. Otherwise search for a Lifeline internet, landline or mobile discounts at https://psc.wi.gov/Pages/Programs/LifeLineLinkup.aspx";
+	var errorText2 = "It appears there are no provider discounts at this address. If you believe there is either AT&T, CenturyLink, Charter, Comcast, Mediacom, Midconitental or Sprint Service at the address contact one of those providers for a potential discount. Otherwise search for a Lifeline internet, landline or mobile discounts at https://psc.wi.gov/Pages/Programs/LifeLineLinkup.aspx";
 	var errorCount = 0;
 	
 	// create and connect to map
@@ -158,12 +158,11 @@ var geoC = (function() {
 				var isInside = turf.inside(ev.result.geometry, poly);
 				console.log(isInside);
 				
-				//if a hyper link appears inacuratley active for a searched address that means ther is an error in the section below that is searching the geospatial data
 				try {
 					if (geocoderControl == false) {
-						addAndPopulateLinks(layer.properties.Amery_Telc, layer.properties.Baldwin_Te, 
-							layer.properties.Bayland_Te, layer.properties.BELMONT_TE, 
-							layer.properties.Bergen_Tel, layer.properties.Bloomer_Te, layer.properties.BRUCETEL_C, layer.properties.Cellcom, layer.properties.Chibardun_, layer.properties.Citizens_T, layer.properties.Clear_Lake, layer.properties.Cochrane_C, layer.properties.Coon_Valle, layer.properties.CTC_Teleco, layer.properties.Cuba_City_, layer.properties.Farmers_In, layer.properties.Frontier_C, layer.properties.Grantsburg, layer.properties.HAGER_TELE, layer.properties.Hillsboro_, layer.properties.Indianhead, layer.properties.Lakefield_, layer.properties.Lakeland_C);//, layer.properties.Lavalle_Te, layer.properties.Lemonweir_, layer.properties.LVT_Corp, layer.properties.Manawa_Tel, layer.properties.Marquette_, layer.properties.MH_Telecom); //layer.properties.BRUCETEL_C,
+						addAndPopulateLinks(layer.properties.ATT, layer.properties.CenturyLin, 
+							layer.properties.Charter, layer.properties.Comcast, 
+							layer.properties.Mediacom, layer.properties.Sprint); //layer.properties.Sprint,
 						geocoderControl = true;
 					}
 				} catch(err) {
@@ -184,7 +183,7 @@ var geoC = (function() {
 	};
 	
 	// function to add and populate links
-	function addAndPopulateLinks(Amery_Telc, Baldwin_Te, Bayland_Te, BELMONT_TE, Bergen_Tel, Bloomer_Te, BRUCETEL_C, Cellcom, Chibardun_, Citizens_T, Clear_Lake, Cochrane_C, Coon_Valle, CTC_Teleco, Cuba_City_, Farmers_In, Frontier_C, Grantsburg, HAGER_TELE, Hillsboro_, Indianhead, Lakefield_, Lakeland_C) {//, Lavalle_Te, Lemonweir_, LVT_Corp, Manawa_Tel, Marquette_, MH_Telecom) {
+	function addAndPopulateLinks(ATT, CenturyLin, Charter, Comcast, Mediacom, Sprint) {
 		errorCount = 0;
 		// create links
 		var link1 = document.createElement("a");
@@ -192,61 +191,15 @@ var geoC = (function() {
 		var link3 = document.createElement("a");
 		var link4 = document.createElement("a");
 		var link6 = document.createElement("a");
-		var link7 = document.createElement("a");
 		var link8 = document.createElement("a");
-		var link9 = document.createElement("a");
-		var link10 = document.createElement("a");
-		var link11 = document.createElement("a");
-		var link12 = document.createElement("a");
-		var link13 = document.createElement("a");
-		var link14 = document.createElement("a");
-		var link15 = document.createElement("a");
-		var link16 = document.createElement("a");
-		var link17 = document.createElement("a");
-		var link18 = document.createElement("a");
-		var link19 = document.createElement("a");
-		var link20 = document.createElement("a");
-		var link21 = document.createElement("a");
-		var link22 = document.createElement("a");
-		var link23 = document.createElement("a");
-		var link24 = document.createElement("a");
-		/*var link25 = document.createElement("a");
-		var link26 = document.createElement("a");
-		var link27 = document.createElement("a");
-		var link28 = document.createElement("a");
-		var link29 = document.createElement("a");
-		var link30 = document.createElement("a");*/
-
+		
 		// create breaks
 		var break1 = document.createElement("br");
 		var break2 = document.createElement("br");
 		var break3 = document.createElement("br");
 		var break4 = document.createElement("br");
 		var break6 = document.createElement("br");
-		var break7 = document.createElement("br");
 		var break8 = document.createElement("br");
-		var break9 = document.createElement("br");
-		var break10 = document.createElement("br");
-		var break11 = document.createElement("br");
-		var break12 = document.createElement("br");
-		var break13 = document.createElement("br");
-		var break14 = document.createElement("br");
-		var break15 = document.createElement("br");
-		var break16 = document.createElement("br");
-		var break17 = document.createElement("br");
-		var break18 = document.createElement("br");
-		var break19 = document.createElement("br");
-		var break20 = document.createElement("br");
-		var break21 = document.createElement("br");
-		var break22 = document.createElement("br");
-		var break23 = document.createElement("br");
-		var break24 = document.createElement("br");
-		/*var break25 = document.createElement("br");
-		var break26 = document.createElement("br");
-		var break27 = document.createElement("br");
-		var break28 = document.createElement("br");
-		var break29 = document.createElement("br");
-		var break30 = document.createElement("br");*/
 		
 		// attribute links with 'gonnaRemove' class
 		link1.setAttribute("class", "gonnaRemove");
@@ -254,30 +207,7 @@ var geoC = (function() {
 		link3.setAttribute("class", "gonnaRemove");
 		link4.setAttribute("class", "gonnaRemove");
 		link6.setAttribute("class", "gonnaRemove");
-		link7.setAttribute("class", "gonnaRemove");
 		link8.setAttribute("class", "gonnaRemove");
-		link9.setAttribute("class", "gonnaRemove");
-		link10.setAttribute("class", "gonnaRemove");
-		link11.setAttribute("class", "gonnaRemove");
-		link12.setAttribute("class", "gonnaRemove");
-		link13.setAttribute("class", "gonnaRemove");
-		link14.setAttribute("class", "gonnaRemove");
-		link15.setAttribute("class", "gonnaRemove");
-		link16.setAttribute("class", "gonnaRemove");
-		link17.setAttribute("class", "gonnaRemove");
-		link18.setAttribute("class", "gonnaRemove");
-		link19.setAttribute("class", "gonnaRemove");
-		link20.setAttribute("class", "gonnaRemove");
-		link21.setAttribute("class", "gonnaRemove");
-		link22.setAttribute("class", "gonnaRemove");
-		link23.setAttribute("class", "gonnaRemove");
-		link24.setAttribute("class", "gonnaRemove");
-		/*link25.setAttribute("class", "gonnaRemove");
-		link26.setAttribute("class", "gonnaRemove");
-		link27.setAttribute("class", "gonnaRemove");
-		link28.setAttribute("class", "gonnaRemove");
-		link29.setAttribute("class", "gonnaRemove");
-		link30.setAttribute("class", "gonnaRemove");*/
 		
 		// attribute breaks with 'gonnaRemove' class
 		break1.setAttribute("class", "gonnaRemove");
@@ -285,30 +215,7 @@ var geoC = (function() {
 		break3.setAttribute("class", "gonnaRemove");
 		break4.setAttribute("class", "gonnaRemove");
 		break6.setAttribute("class", "gonnaRemove");
-		break7.setAttribute("class", "gonnaRemove");
 		break8.setAttribute("class", "gonnaRemove");
-		break9.setAttribute("class", "gonnaRemove");
-		break10.setAttribute("class", "gonnaRemove");
-		break11.setAttribute("class", "gonnaRemove");
-		break12.setAttribute("class", "gonnaRemove");
-		break13.setAttribute("class", "gonnaRemove");
-		break14.setAttribute("class", "gonnaRemove");
-		break15.setAttribute("class", "gonnaRemove");
-		break16.setAttribute("class", "gonnaRemove");
-		break17.setAttribute("class", "gonnaRemove");
-		break18.setAttribute("class", "gonnaRemove");
-		break19.setAttribute("class", "gonnaRemove");
-		break20.setAttribute("class", "gonnaRemove");
-		break21.setAttribute("class", "gonnaRemove");
-		break22.setAttribute("class", "gonnaRemove");
-		break23.setAttribute("class", "gonnaRemove");
-		break24.setAttribute("class", "gonnaRemove");
-		/*break25.setAttribute("class", "gonnaRemove");
-		break26.setAttribute("class", "gonnaRemove");
-		break27.setAttribute("class", "gonnaRemove");
-		break28.setAttribute("class", "gonnaRemove");
-		break29.setAttribute("class", "gonnaRemove");
-		break30.setAttribute("class", "gonnaRemove");*/
 		
 		// attribute links with blank target for opening in new tab
 		link1.setAttribute("target", "_blank");
@@ -316,263 +223,57 @@ var geoC = (function() {
 		link3.setAttribute("target", "_blank");
 		link4.setAttribute("target", "_blank");
 		link6.setAttribute("target", "_blank");
-		link7.setAttribute("target", "_blank");
 		link8.setAttribute("target", "_blank");
-		link9.setAttribute("target", "_blank");
-		link10.setAttribute("target", "_blank");
-		link11.setAttribute("target", "_blank");
-		link12.setAttribute("target", "_blank");
-		link13.setAttribute("target", "_blank");
-		link14.setAttribute("target", "_blank");
-		link15.setAttribute("target", "_blank");
-		link16.setAttribute("target", "_blank");
-		link17.setAttribute("target", "_blank");
-		link18.setAttribute("target", "_blank");
-		link19.setAttribute("target", "_blank");
-		link20.setAttribute("target", "_blank");
-		link21.setAttribute("target", "_blank");
-		link22.setAttribute("target", "_blank");
-		link23.setAttribute("target", "_blank");
-		link24.setAttribute("target", "_blank");
-		/*link25.setAttribute("target", "_blank");
-		link26.setAttribute("target", "_blank");
-		link27.setAttribute("target", "_blank");
-		link28.setAttribute("target", "_blank");
-		link29.setAttribute("target", "_blank");
-		link30.setAttribute("target", "_blank");*/
 		
 		// check if properties has link
-		if (Amery_Telc != "No Wireline Lifeline Program Available") {
-			link1.setAttribute("href", Amery_Telc);
-			link1.innerHTML = "<b>Amery_Telc: </b>Discount Program Available";// + Amery_Telc;
+		if (ATT != "No discount program") {
+			link1.setAttribute("href", ATT);
+			link1.innerHTML = "<b>ATT: </b>Discount Program Available";// + ATT;
 		} else {
-			link1.innerHTML = "<b>Amery_Telc: </b>No Wireline Lifeline Program Available";
+			link1.innerHTML = "<b>ATT: </b>No discount program";
 			link1.setAttribute("class", "noLink gonnaRemove");
 		}
 		
-		if (Baldwin_Te != "No Wireline Lifeline Program Available") {
-			link2.setAttribute("href", Baldwin_Te);
-			link2.innerHTML = "<b>Baldwin_Te: </b>Discount Program Available";//  + Baldwin_Te;
+		if (CenturyLin != "No discount program") {
+			link2.setAttribute("href", CenturyLin);
+			link2.innerHTML = "<b>CenturyLink: </b>Discount Program Available";//  + CenturyLink;
 		} else {
-			link2.innerHTML = "<b>Baldwin_Te: </b>No Wireline Lifeline Program Available";
+			link2.innerHTML = "<b>CenturyLink: </b>No discount program";
 			link2.setAttribute("class", "noLink gonnaRemove");
 		}
 		
-		if (Bayland_Te != "No Wireline Lifeline Program Available") {
-			link3.setAttribute("href", Bayland_Te);
-			link3.innerHTML = "<b>Bayland_Te: </b>Discount Program Available";//  + Bayland_Te;
+		if (Charter != "No discount program") {
+			link3.setAttribute("href", Charter);
+			link3.innerHTML = "<b>Charter: </b>Discount Program Available";//  + Charter;
 		} else {
-			link3.innerHTML = "<b>Bayland_Te: </b>No Wireline Lifeline Program Available";
+			link3.innerHTML = "<b>Charter: </b>No discount program";
 			link3.setAttribute("class", "noLink gonnaRemove");
 		}
 		
-		if (BELMONT_TE != "No Wireline Lifeline Program Available") {
-			link4.setAttribute("href", BELMONT_TE);
-			link4.innerHTML = "<b>BELMONT_TE: </b>Discount Program Available";//  + BELMONT_TE;
+		if (Comcast != "No discount program") {
+			link4.setAttribute("href", Comcast);
+			link4.innerHTML = "<b>Comcast: </b>Discount Program Available";//  + Comcast;
 		} else {
-			link4.innerHTML = "<b>BELMONT_TE: </b>No Wireline Lifeline Program Available";
+			link4.innerHTML = "<b>Comcast: </b>No discount program";
 			link4.setAttribute("class", "noLink gonnaRemove");
 		}
 				
-		if (Bergen_Tel != "No Wireline Lifeline Program Available") {
-			link6.setAttribute("href", Bergen_Tel);
-			link6.innerHTML = "<b>Bergen_Tel: </b>Discount Program Available";//  + Bergen_Tel;
+		if (Mediacom != "No discount program") {
+			link6.setAttribute("href", Mediacom);
+			link6.innerHTML = "<b>Mediacom: </b>Discount Program Available";//  + Mediacom;
 		} else {
-			link6.innerHTML = "<b>Bergen_Tel: </b>No Wireline Lifeline Program Available";
+			link6.innerHTML = "<b>Mediacom: </b>No discount program";
 			link6.setAttribute("class", "noLink gonnaRemove");
 		}
 		
-		if (Bloomer_Te != "No Wireline Lifeline Program Available") {
-			link7.setAttribute("href", Bloomer_Te);
-			link7.innerHTML = "<b>Bloomer_Te: </b>Discount Program Available";//  + Bloomer_Te;
+		if (Sprint != "No discount program") {
+			link8.setAttribute("href", Sprint);
+			link8.innerHTML = "<b>PCs for people: </b>Discount Program Available";//  + PCs for people;
 		} else {
-			link7.innerHTML = "<b>Bloomer_Te: </b>No Wireline Lifeline Program Available";
-			link7.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (BRUCETEL_C != "No Wireline Lifeline Program Available") {
-			link8.setAttribute("href", BRUCETEL_C);
-			link8.innerHTML = "<b>BRUCETEL_C: </b>Discount Program Available";//  + BRUCETEL_C;
-		} else {
-			link8.innerHTML = "<b>BRUCETEL_C: </b>No Wireline Lifeline Program Available";
+			link8.innerHTML = "<b>Sprint: </b>No discount program";
 			link8.setAttribute("class", "noLink gonnaRemove");
 		}
 					
-		if (Cellcom != "No Wireline Lifeline Program Available") {
-			link9.setAttribute("href", Cellcom);
-			link9.innerHTML = "<b>Cellcom: </b>Discount Program Available";//  + PCs for people;
-		} else {
-			link9.innerHTML = "<b>Cellcom: </b>No Wireline Lifeline Program Available";
-			link9.setAttribute("class", "noLink gonnaRemove");
-		}			
-		
-		if (Chibardun_ != "No Wireline Lifeline Program Available") {
-			link10.setAttribute("href", Chibardun_);
-			link10.innerHTML = "<b>Chibardun_: </b>Discount Program Available";//  + Chibardun_;
-		} else {
-			link10.innerHTML = "<b>Chibardun_: </b>No Wireline Lifeline Program Available";
-			link10.setAttribute("class", "noLink gonnaRemove");
-		}		
-
-		if (Citizens_T != "No Wireline Lifeline Program Available") {
-			link11.setAttribute("href", Citizens_T);
-			link11.innerHTML = "<b>Citizens_T: </b>Discount Program Available";//  + Citizens_T;
-		} else {
-			link11.innerHTML = "<b>Citizens_T: </b>No Wireline Lifeline Program Available";
-			link11.setAttribute("class", "noLink gonnaRemove");
-		}	
-		
-		if (Clear_Lake != "No Wireline Lifeline Program Available") {
-			link12.setAttribute("href", Clear_Lake);
-			link12.innerHTML = "<b>Clear_Lake: </b>Discount Program Available";//  + Clear_Lake;
-		} else {
-			link12.innerHTML = "<b>Clear_Lake: </b>No Wireline Lifeline Program Available";
-			link12.setAttribute("class", "noLink gonnaRemove");
-		}	
-
-		if (Cochrane_C != "No Wireline Lifeline Program Available") {
-			link13.setAttribute("href", Cochrane_C);
-			link13.innerHTML = "<b>Cochrane_C: </b>Discount Program Available";//  + Cochrane_C;
-		} else {
-			link13.innerHTML = "<b>Cochrane_C: </b>No Wireline Lifeline Program Available";
-			link13.setAttribute("class", "noLink gonnaRemove");
-		}			
-		
-		if (Coon_Valle != "No Wireline Lifeline Program Available") {
-			link14.setAttribute("href", Coon_Valle);
-			link14.innerHTML = "<b>Coon_Valle: </b>Discount Program Available";//  + Coon_Valle;
-		} else {
-			link14.innerHTML = "<b>Coon_Valle: </b>No Wireline Lifeline Program Available";
-			link14.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (CTC_Teleco != "No Wireline Lifeline Program Available") {
-			link15.setAttribute("href", CTC_Teleco);
-			link15.innerHTML = "<b>CTC_Teleco: </b>Discount Program Available";//  + CTC_Teleco;
-		} else {
-			link15.innerHTML = "<b>CTC_Teleco: </b>No Wireline Lifeline Program Available";
-			link15.setAttribute("class", "noLink gonnaRemove");
-		}
-
-		if (Cuba_City_ != "No Wireline Lifeline Program Available") {
-			link16.setAttribute("href", Cuba_City_);
-			link16.innerHTML = "<b>Cuba_City_: </b>Discount Program Available";//  + Cuba_City_;
-		} else {
-			link16.innerHTML = "<b>Cuba_City_: </b>No Wireline Lifeline Program Available";
-			link16.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Farmers_In != "No Wireline Lifeline Program Available") {
-			link17.setAttribute("href", Farmers_In);
-			link17.innerHTML = "<b>Farmers_In: </b>Discount Program Available";//  + Farmers_In;
-		} else {
-			link17.innerHTML = "<b>Farmers_In: </b>No Wireline Lifeline Program Available";
-			link17.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Frontier_C != "No Wireline Lifeline Program Available") {
-			link18.setAttribute("href", Frontier_C);
-			link18.innerHTML = "<b>Frontier_C: </b>Discount Program Available";//  + Frontier_C;
-		} else {
-			link18.innerHTML = "<b>Frontier_C: </b>No Wireline Lifeline Program Available";
-			link18.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Grantsburg != "No Wireline Lifeline Program Available") {
-			link19.setAttribute("href", Grantsburg);
-			link19.innerHTML = "<b>Grantsburg: </b>Discount Program Available";//  + Grantsburg;
-		} else {
-			link19.innerHTML = "<b>Grantsburg: </b>No Wireline Lifeline Program Available";
-			link19.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (HAGER_TELE != "No Wireline Lifeline Program Available") {
-			link20.setAttribute("href", HAGER_TELE);
-			link20.innerHTML = "<b>HAGER_TELE: </b>Discount Program Available";//  + HAGER_TELE;
-		} else {
-			link20.innerHTML = "<b>HAGER_TELE: </b>No Wireline Lifeline Program Available";
-			link20.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Hillsboro_ != "No Wireline Lifeline Program Available") {
-			link21.setAttribute("href", Hillsboro_);
-			link21.innerHTML = "<b>Hillsboro_: </b>Discount Program Available";//  + Hillsboro_;
-		} else {
-			link21.innerHTML = "<b>Hillsboro_: </b>No Wireline Lifeline Program Available";
-			link21.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Indianhead != "No Wireline Lifeline Program Available") {
-			link22.setAttribute("href", Indianhead);
-			link22.innerHTML = "<b>Indianhead: </b>Discount Program Available";//  + Indianhead;
-		} else {
-			link22.innerHTML = "<b>Indianhead: </b>No Wireline Lifeline Program Available";
-			link22.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Lakefield_ != "No Wireline Lifeline Program Available") {
-			link23.setAttribute("href", Lakefield_);
-			link23.innerHTML = "<b>Lakefield_: </b>Discount Program Available";//  + Lakefield_;
-		} else {
-			link23.innerHTML = "<b>Lakefield_: </b>No Wireline Lifeline Program Available";
-			link23.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Lakeland_C != "No Wireline Lifeline Program Available") {
-			link24.setAttribute("href", Lakeland_C);
-			link24.innerHTML = "<b>Lakeland_C: </b>Discount Program Available";//  + Lakeland_C;
-		} else {
-			link24.innerHTML = "<b>Lakeland_C: </b>No Wireline Lifeline Program Available";
-			link24.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		/*if (Lavalle_Te != "No Wireline Lifeline Program Available") {
-			link25.setAttribute("href", Lavalle_Te);
-			link25.innerHTML = "<b>Lavalle_Te: </b>Discount Program Available";//  + Lavalle_Te;
-		} else {
-			link25.innerHTML = "<b>Lavalle_Te: </b>No Wireline Lifeline Program Available";
-			link25.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Lemonweir_ != "No Wireline Lifeline Program Available") {
-			link26.setAttribute("href", Lemonweir_);
-			link26.innerHTML = "<b>Lemonweir_: </b>Discount Program Available";//  + Lemonweir_;
-		} else {
-			link26.innerHTML = "<b>Lemonweir_: </b>No Wireline Lifeline Program Available";
-			link26.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (LVT_Corp != "No Wireline Lifeline Program Available") {
-			link27.setAttribute("href", LVT_Corp);
-			link27.innerHTML = "<b>LVT_Corp: </b>Discount Program Available";//  + LVT_Corp;
-		} else {
-			link27.innerHTML = "<b>LVT_Corp: </b>No Wireline Lifeline Program Available";
-			link27.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Manawa_Tel != "No Wireline Lifeline Program Available") {
-			link28.setAttribute("href", Manawa_Tel);
-			link28.innerHTML = "<b>Manawa_Tel: </b>Discount Program Available";//  + Manawa_Tel;
-		} else {
-			link28.innerHTML = "<b>Manawa_Tel: </b>No Wireline Lifeline Program Available";
-			link28.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (Marquette_ != "No Wireline Lifeline Program Available") {
-			link29.setAttribute("href", Marquette_);
-			link29.innerHTML = "<b>Marquette_: </b>Discount Program Available";//  + Marquette_;
-		} else {
-			link29.innerHTML = "<b>Marquette_: </b>No Wireline Lifeline Program Available";
-			link29.setAttribute("class", "noLink gonnaRemove");
-		}
-		
-		if (MH_Telecom != "No Wireline Lifeline Program Available") {
-			link30.setAttribute("href", MH_Telecom);
-			link30.innerHTML = "<b>MH_Telecom: </b>Discount Program Available";//  + MH_Telecom;
-		} else {
-			link30.innerHTML = "<b>MH_Telecom: </b>No Wireline Lifeline Program Available";
-			link30.setAttribute("class", "noLink gonnaRemove");*/
-		
 		// append links and breaks to container
 		$(link1).appendTo("#myContainer");
 		$(break1).appendTo("#myContainer");
@@ -584,55 +285,9 @@ var geoC = (function() {
 		$(break4).appendTo("#myContainer");
 		$(link6).appendTo("#myContainer");
 		$(break6).appendTo("#myContainer");
-		$(link7).appendTo("#myContainer");
-		$(break7).appendTo("#myContainer");
 		$(link8).appendTo("#myContainer");
 		$(break8).appendTo("#myContainer");
-		$(link9).appendTo("#myContainer");
-		$(break9).appendTo("#myContainer");
-		$(link10).appendTo("#myContainer");
-		$(break10).appendTo("#myContainer");
-		$(link11).appendTo("#myContainer");
-		$(break11).appendTo("#myContainer");
-		$(link12).appendTo("#myContainer");
-		$(break12).appendTo("#myContainer");
-		$(link13).appendTo("#myContainer");
-		$(break13).appendTo("#myContainer");
-		$(link14).appendTo("#myContainer");
-		$(break14).appendTo("#myContainer");
-		$(link15).appendTo("#myContainer");
-		$(break15).appendTo("#myContainer");
-		$(link16).appendTo("#myContainer");
-		$(break16).appendTo("#myContainer");
-		$(link17).appendTo("#myContainer");
-		$(break17).appendTo("#myContainer");
-		$(link18).appendTo("#myContainer");
-		$(break18).appendTo("#myContainer");
-		$(link19).appendTo("#myContainer");
-		$(break19).appendTo("#myContainer");
-		$(link20).appendTo("#myContainer");
-		$(break20).appendTo("#myContainer");
-		$(link21).appendTo("#myContainer");
-		$(break21).appendTo("#myContainer");
-		$(link22).appendTo("#myContainer");
-		$(break22).appendTo("#myContainer");
-		$(link23).appendTo("#myContainer");
-		$(break23).appendTo("#myContainer");
-		$(link24).appendTo("#myContainer");
-		$(break24).appendTo("#myContainer");
-		/*$(link2).appendTo("#myContainer");
-		$(break2).appendTo("#myContainer");
-		$(link26).appendTo("#myContainer");
-		$(break26).appendTo("#myContainer");
-		$(link27).appendTo("#myContainer");
-		$(break27).appendTo("#myContainer");
-		$(link28).appendTo("#myContainer");
-		$(break28).appendTo("#myContainer");
-		$(link29).appendTo("#myContainer");
-		$(break29).appendTo("#myContainer");
-		$(link30).appendTo("#myContainer");
-		$(break30).appendTo("#myContainer");*/
-		
+				
 		// set timer to allow function to run again
 		window.setTimeout(function() {
 			geocoderControl = false;
